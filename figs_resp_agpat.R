@@ -39,39 +39,28 @@ normal.contrasts = c('agt', 'pat')
 #   mutate(Group = 'RHLang')
 # allSigChange = myResults
 
-myResults = read.csv('ag_pilot.csv') %>%
+myResults = read.csv('toolbox_outputs/langloc_resp_agpat_20170309.csv') %>%
   mutate(ROIName = LangROI.Names[ROI]) %>%
   mutate(contrastName = normal.contrasts[Contrast])%>%
   mutate(Group = 'LHLang')
 #allSigChange = rbind(allSigChange, myResults)
 allSigChange = myResults
 
-# myResults = read.csv('MDfROIsrespNonlitJokes.csv') %>%
-#   mutate(ROIName = MDROI.Names[ROI]) %>%
-#   mutate(contrastName = normal.contrasts[Contrast]) %>%
-#   mutate(Group = 'MDAll')
-# allSigChange = rbind(allSigChange, myResults)
-# 
-# #Little extra thing here, rename MD to split by L and R hemisphere!
-# allSigChange[(allSigChange$Group == 'MDAll') & (allSigChange$ROI %%2 == 1),]$Group = 'MDLeft'
-# allSigChange[(allSigChange$Group == 'MDAll') & (allSigChange$ROI %%2 == 0),]$Group = 'MDRight'
-# 
-# #Little extra for ToM: Remove the VMPFC because it did not replicate the basic localizer finding.
-# myResults = read.csv('NewToMfROIsrespNonlitJokes.csv')%>%
-#   mutate(ROIName = ToMROI.Names[ROI]) %>%
-#   mutate(contrastName = normal.contrasts[Contrast]) %>%
-#   mutate(Group = 'ToM') %>%
-#   filter(ROIName !="VM PFC")
-# allSigChange = rbind(allSigChange, myResults)
-# 
-# myResults = read.csv('NewToMfROIsresCustomJokes.csv')%>%
-#   mutate(ROIName = ToMROI.Names[ROI]) %>%
-#   mutate(contrastName = custom.contrasts[Contrast])%>%
-#   mutate(Group = 'ToMCustom')%>%
-#   filter(ROIName !="VM PFC")
-# allSigChange = rbind(allSigChange, myResults)
-# 
+myResults = read.csv('toolbox_outputs/MDloc_resp_agpat_20170317.csv') %>%
+  mutate(ROIName = MDROI.Names[ROI]) %>%
+  mutate(contrastName = normal.contrasts[Contrast]) %>%
+  mutate(Group = 'MDAll')
+allSigChange = rbind(allSigChange, myResults)
 
+#Little extra thing here, rename MD to split by L and R hemisphere!
+allSigChange[(allSigChange$Group == 'MDAll') & (allSigChange$ROI %%2 == 1),]$Group = 'MDLeft'
+allSigChange[(allSigChange$Group == 'MDAll') & (allSigChange$ROI %%2 == 0),]$Group = 'MDRight'
+
+myResults = read.csv('toolbox_outputs/ToMloc_resp_agpat_20170317.csv')%>%
+  mutate(ROIName = ToMROI.Names[ROI]) %>%
+  mutate(contrastName = normal.contrasts[Contrast]) %>%
+  mutate(Group = 'ToM')
+allSigChange = rbind(allSigChange, myResults)
 
 #########
 # TRANSFORMATIONS
@@ -93,7 +82,7 @@ toGraph = allSigChange %>%
   filter(contrastName %in% c('agt','pat'))
 
 #Next, get the table that we'll be making the graphs from: for each region (including the average region), take all 
-#the individual signal changes and calculate a mean and a standard error
+#the individual signal changes and calculate a mean, a standard error (incase we want it) and bootstrapped CIs
 sterr <- function(mylist){
   my_se = sd(mylist)/sqrt(length(mylist)) 
   
@@ -113,7 +102,7 @@ mystats$se_down = mystats$themean - mystats$sterr
 avgz <- filter(mystats, ROIName == 'LocalizerAverage')
 write.csv(avgz, 'jokes_localizer_avg.csv')
 
-#Edit! We should be doing bootstrapped 95% confidence intervals instead! calculate them from allSigChange
+#bootstrapped 95% confidence intervals! calculate them from allSigChange
 #then merge into mystats
 bootup <- function(mylist){
   foo <- bootstrap(mylist, 1000, mean)
@@ -134,7 +123,7 @@ mystats = merge(mystats,mybootdown)
 #########
 # Effect size reports
 #########
-#For the main analysis in the paper (signal change jokes>nonjokes) we'll report  a simple measure of effect size: the
+#report  a simple measure of effect size: the
 #mean signal change in each system. Here they are:
 eff <- mystats %>%
   filter(ROIName == 'LocalizerAverage') %>%
@@ -157,10 +146,7 @@ eff <- mystats %>%
 mystats$contNo <- 1
 mystats[mystats$contrastName == 'agt',]$contNo <- 1
 mystats[mystats$contrastName == 'pat',]$contNo <- 2
-#mystats[mystats$contrastName == 'high',]$contNo <- 1
-#mystats[mystats$contrastName == 'med',]$contNo <- 2
-#mystats[mystats$contrastName == 'low',]$contNo <- 3
-#mystats = arrange(mystats, ROI)
+mystats = arrange(mystats, ROI)
 mystats = arrange(mystats, contNo)
 
 #Add a new col grouping to separate out the localizer average
@@ -175,18 +161,14 @@ mystats$ROIName <- str_wrap(mystats$ROIName, width = 4)
 mystats$contrastLabel <- mystats$contrastName
 mystats[mystats$contrastName == "agt",]$contrastLabel <- "Agent highlight\n  "
 mystats[mystats$contrastName == "pat",]$contrastLabel <- "Patient highlight\n   "
-#mystats[mystats$contrastName == "high",]$contrastLabel <- "high\n  "
-#mystats[mystats$contrastName == "med",]$contrastLabel <- "med\n   "
-#mystats[mystats$contrastName == "low",]$contrastLabel <- "low\n  "
-
 
 
 #Subsets & Ordering (elaborate code, probably can condense these; ggplot is finicky at orders)
-RHLang = filter(mystats, Group == 'RHLang')
-RHLang <- RHLang[order(RHLang$ROI),]
-RHLang$PresOrder = c(13,14, 9,10, 7,8, 11,12, 3,4,5,6,1,2) #Reorder for standard presentation!
-RHLang <- RHLang[order(RHLang$PresOrder),]
-RHLang = arrange(RHLang, desc(ROIGroup))
+# RHLang = filter(mystats, Group == 'RHLang')
+# RHLang <- RHLang[order(RHLang$ROI),]
+# RHLang$PresOrder = c(13,14, 9,10, 7,8, 11,12, 3,4,5,6,1,2) #Reorder for standard presentation!
+# RHLang <- RHLang[order(RHLang$PresOrder),]
+# RHLang = arrange(RHLang, desc(ROIGroup))
 
 
 LHLang = filter(mystats, Group == 'LHLang')
@@ -206,17 +188,9 @@ MDRight = arrange(MDRight, desc(ROIGroup))
 
 ToM = filter(mystats, Group == 'ToM')
 ToM <- ToM[order(ToM$ROI),]
-ToM$PresOrder = c(1,2,3,4,9,10,5,6,7,8,11,12,13,14)
+ToM$PresOrder = c(1,2,3,4,9,10,5,6,7,8,11,12,13,14,15,16)
 ToM <- ToM[order(ToM$PresOrder),]
 ToM = arrange(ToM, desc(ROIGroup))
-
-ToMCustom = filter(mystats, Group == 'ToMCustom')
-ToMCustom <- arrange(ToMCustom, contNo)
-ToMCustom <- ToMCustom[order(ToMCustom$ROI),]
-ToMCustom$PresOrder = c(1,2,3,4,5,6,13,14,15,7,8,9,10,11,12,16,17,18,19,20,21)
-ToMCustom <- ToMCustom[order(ToMCustom$PresOrder),]
-ToMCustom = arrange(ToMCustom, desc(ROIGroup))
-
 
 #Graphing function!
 
@@ -253,8 +227,6 @@ ggplot(data=plotData, aes(x=ROIName, y=themean, fill=contrastLabel)) +
 }
 
 makeBar(LHLang)
-makeBar(RHLang)
 makeBar(MDLeft)
 makeBar(MDRight)
 makeBar(ToM, -0.5, 1)
-makeBar(ToMCustom, -0.5, 1, c("high\n  "= "gray35", "med\n   "= "gray50", "low\n  "= "gray65"))
