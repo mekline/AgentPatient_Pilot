@@ -7,9 +7,9 @@
 
 ####
 #Stuff to change!
-myResultsFolder = paste(getwd(),'/ToMloc_resp_agpat_20170317',sep='')
+myResultsFolder = paste(getwd(),'/MDloc_resp_agpat_20170317',sep='')
 myOutputFolder = getwd()
-myFilename = 'ToMloc_resp_agpat_20170317.csv'
+myFilename = 'MDloc_resp_agpat_20170317.csv'
 toSave = 1
 
 
