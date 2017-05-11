@@ -1,0 +1,30 @@
+    %Info on order_filename:
+    %This is a .csv file, specific to the order and run, with all the info
+    %we need for each run. There exist XXX files total, one for each order
+    
+    %Below are descriptions of the important variables in the file:
+    
+    %IntendedOnset: onset time scheduled by Optseq (different from actual onset
+    %stored in results data file)
+    
+    %Duration: how long to show the item
+    
+    %Condition: agent highlighted, patient highlighted, or NULL (fixation
+    %cross).
+    
+    %Flip: for linguistic stimuli, Flip determines whether the active or
+    %passive version of the sentence is presented. 0 means active, while 1
+    %indicates passive.
+    
+    %Order_agent: index at which the agent-highlight version of the
+    %sentence is presented, relative to all the agent-highlight versions.
+    %For instance, if Order_agent for an item is 42, it will
+    %be the 42nd agent-highlight item presented, although it won't be the
+    %42nd item presented overall because there will be patient-highlight
+    %items interspersed with the agent-highlight items.
+    
+    %Order_patient: like Order_agent, but for patients.
+    
+    %Condition, Flip, Order_agent, and Order_patient were all randomly
+    %generated in an Excel spreadsheet and are random with respect to each
+    %other as well as with respect to the sentence items.

@@ -136,7 +136,7 @@ function AgentPatient33(subjID, image_type, order)
      resultsHdr = {'Trial', 'SubjID',        'Run',       'Order',   'ItemNumber'   'IntendedOnset', ...
                    'ActualOnset', 'IntendedDuration', 'ActualDuration',      'Condition', 'Flip', 'FlipMeaning',  'Sentence', ...
                    'AgentName',     'AgentShape',          'PatientName'...
-                   'PatientShape', 'BaseFilename', 'BlinkFilename', 'Response', 'Correct'};
+                   'PatientShape', 'BaseFilename', 'BlinkFilename'};
  	
      %Set up results, the table that will hold this data
      results = cell(numEvents, length(resultsHdr));
@@ -275,10 +275,8 @@ function AgentPatient33(subjID, image_type, order)
                 results.AgentShape{eventNum} = 'NA';
                 results.PatientName{eventNum} = 'NA';
                 results.PatientShape{eventNum} = 'NA';
-                results.Response{eventNum} = 'NA';
-                results.Correct{eventNum} = 'NA';
                 
-            %If there's a sentence to be presented (i.e., not NULL)   
+            %If there's (just) a sentence to be presented (i.e., not NULL)   
             else
                 if char(all_materials.Flip(eventNum)) == '0'
                     sentence = char(all_materials.ProgressiveActive(eventNum));
@@ -290,8 +288,6 @@ function AgentPatient33(subjID, image_type, order)
                 question = 0;
                 if sum(strcmp(optCond, {'AgentQ','PatientQ'}))
                     question = 1;
-                    theQ = char(all_materials.Question(eventNum)); %XXXXXSTART HERE!
-                    theA = char(all_materials.Answer(eventNum));
                 end
                 
                 eventEndTime = runOnset + intendedOffset;
