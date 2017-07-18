@@ -69,7 +69,7 @@ function AgentPatient33(subjID, image_type, order)
     %Timing (in seconds)              
     FIX_DUR     = 0.0; %Length of trial-initial fixation
     ITI         = 0.0; %Inter-trial interval
-    BLINK_DUR   = 0.2; %Length of one blink on or off
+    BLINK_DUR   = 0.1; %Length of one blink on or off
     TIME_TO_Q   = 4.0; %delay until question, for question trials
     TIME_Q      = 2.0; %time question visible, for question trials
     SCREEN_ADJUST = 1.2; %factor to adjust aspect ratio by
@@ -87,7 +87,7 @@ function AgentPatient33(subjID, image_type, order)
     
     %% Set display options
     %Font sizes
-    sentFontSize = 40;      %stimuli sentences
+    sentFontSize = 40;      %question sentences
     fixFontSize = 40;       %fixation cross
     
     %% Set up orders
@@ -190,7 +190,7 @@ function AgentPatient33(subjID, image_type, order)
     index = 1; %counter
     load_start_time = GetSecs;
     for eventNum=1:numEvents
-        condition = all_materials.Condition(eventNum);
+        condition = all_materials.Condition(eventNum); %TOUPDATE: Is this coming from the right condition? 
         intendedDuration = all_materials.IntendedDuration(eventNum);
         flip = all_materials.Flip{eventNum}; 
         
@@ -314,7 +314,7 @@ function AgentPatient33(subjID, image_type, order)
                 if question
                     PTBhelper('stimText', wPtr, '+', fixFontSize);
                     PTBhelper('waitFor',questionTime,kbIdx,escapeKey);
-                    PTBhelper('stimText', wPtr, '+', fixFontSize);
+                    PTBhelper('stimText', wPtr, %%%QUESTION TEXT%%%%% , fixFontSize);
                     %AND RECORD INPUT!!
                 end
 
