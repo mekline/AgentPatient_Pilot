@@ -65,7 +65,7 @@ start_time = GetSecs;
     %% Set experiment constants
     %Timing (in seconds)              
     FIX_DUR     = 0.0; %Length of trial-initial fixation
-    ITI         = 0.0; %Inter-trial interval
+    ITI         = 0.2; %Inter-trial interval
     BLINK_DUR   = 0.1; %Length of one blink on or off
     TIME_TO_Q   = 4.0; %delay until question, for question trials
     TIME_Q      = 2.0; %time question visible, for question trials
@@ -182,8 +182,14 @@ start_time = GetSecs;
     base_files = cell(1,72);
     base_stims = cell(1,72);
     
+    %feedback images 
+    %feedback_files = cell(1,1);% can be changed if more than one feedback image is used
+    
     IMAGE_DIR = fullfile(pwd, 'images', image_type); %the folder we're taking images from
-
+    %FEEDBACK_DIR = fullfile(pwd, 'images', 'feedback');
+    %feedback_name = ['feedback_' char(feedback_num) '.jpg']; 
+    %feedback_img{feedback_num} = Screen('MakeTexture', wPtr, double(feedback));
+    
     index = 1; %counter
     load_start_time = GetSecs;
     for eventNum=1:numEvents
@@ -202,9 +208,7 @@ start_time = GetSecs;
 
             %what is the name of the image we want
             img_name = [char(condition) '_' flip_word '_' char(all_materials.ItemNumber{eventNum}) '.jpg'];
-            base_name = ['Base_' flip_word '_' char(all_materials.ItemNumber{eventNum}) '.jpg'];
-            
-            
+            base_name = ['Base_' flip_word '_' char(all_materials.ItemNumber{eventNum}) '.jpg'];            
             %put it into a cell with the other image files
             img_files{1,index} = fullfile(IMAGE_DIR, img_name);
             base_files{1,index} = fullfile(IMAGE_DIR, base_name);
@@ -219,8 +223,7 @@ start_time = GetSecs;
             %make it a texture so PTBHelper will like it
             img_stims{index} = Screen('MakeTexture', wPtr, double(image));
             base_stims{index} = Screen('MakeTexture', wPtr, double(base));
-
-        
+            
         results.BlinkFilename{eventNum} = char(img_name);
         results.BaseFilename{eventNum} = char(base_name);
         results.FlipMeaning{eventNum} = char(flip_word);
@@ -293,8 +296,8 @@ start_time = GetSecs;
                 
                 eventEndTime = runOnset + intendedOffset;
                 if question
-                    sentEndTime = eventEndTime - TIME_TO_Q - TIME_Q;
-                    questionTime = eventEndTime - TIME_TO_Q;
+                    sentEndTime = eventEndTime - TIME_TO_Q - TIME_Q - ITI;
+                    questionTime = eventEndTime - TIME_TO_Q - ITI;
                 else
                     sentEndTime = eventEndTime;
                 end
@@ -304,8 +307,13 @@ start_time = GetSecs;
                     PTBhelper('stimImage', wPtr, item_index, img_stims);
                     WaitSecs(BLINK_DUR);
                     PTBhelper('stimImage', wPtr, item_index, base_stims);
-                    WaitSecs(BLINK_DUR);
+                    WaitSecs(BLINK_DUR); 
                 end
+                
+                %Show fixation cross during ITI
+                PTBhelper('stimText', wPtr, '+', fixFontSize);
+                fixEndTime = ITI;
+                PTBhelper('waitFor',fixEndTime,kbIdx,escapeKey);
                 
                 %Play a question if applicable!
                 if question
@@ -315,10 +323,15 @@ start_time = GetSecs;
                     record_resp = PTBhelper('waitFor',questionTime,kbIdx,escapeKey);
                     %we just want the key that is pressed:
                     resp = record_resp{1};
+                    rt = record_resp{2};
+                    %feedback_dur = TimeQ - rt;
                     if resp == '1!' % record yes if 1 is pressed
                         results.Response{eventNum} = 'Y';
+                        %PTBhelper('stimImage', wPtr, 1, feedback_img)
                     elseif resp == '2@' %record no if 2 is pressed
                         results.Response{eventNum} = 'N';
+                        %PTBhelper('stimImage', wPtr, 1, feedback_img)
+                        %WaitSecs(feedback_dur);
                     end
                 %Was the response correct? 
                     if results.Response{eventNum} == theA
