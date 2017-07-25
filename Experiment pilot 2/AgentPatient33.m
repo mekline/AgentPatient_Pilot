@@ -30,12 +30,9 @@
 % To change font size, go to Set display options.
 % If the aspect ratio is off, change SCREEN_ADJUST in Set experiment
 % constants until it looks better.
-
 function AgentPatient33(subjID, image_type, order)
-
-
-
-    start_time = GetSecs;
+Screen('Preference', 'SkipSyncTests', 1)
+start_time = GetSecs;
     
 
     %% Make sure inputs are valid and raise an error otherwise
@@ -169,7 +166,7 @@ function AgentPatient33(subjID, image_type, order)
     PTBhelper('stimText',wPtr,'Loading images\n\n(Don''t start yet!)',30);
      
     %Keyboard
-    keyboardInfo = [];
+    %keyboardInfo = [];
     keyboardInfo = PTBhelper('getKeyboardIndex');
     kbIdx = [keyboardInfo{1}];
     escapeKey = keyboardInfo{2};
@@ -243,7 +240,6 @@ function AgentPatient33(subjID, image_type, order)
 	% Wait indefinitely until trigger
     PTBhelper('stimText',wPtr,'Waiting for trigger...',sentFontSize);
     PTBhelper('waitFor','TRIGGER',kbIdx,escapeKey);
-    
     runOnset = GetSecs; %remains the same
     item_index = 1;
     
@@ -292,9 +288,7 @@ function AgentPatient33(subjID, image_type, order)
                     question = 1;
                     theQ = char(all_materials.Question(eventNum)); %XXXXXSTART HERE!
                     theA = char(all_materials.Answer(eventNum));
-                    
-                    disp(theQ)
-                    disp(theA)
+                    disp(theA) 
                 end
                 
                 eventEndTime = runOnset + intendedOffset;
@@ -316,12 +310,23 @@ function AgentPatient33(subjID, image_type, order)
                 %Play a question if applicable!
                 if question
                     PTBhelper('stimText', wPtr, '+', fixFontSize);
-                    PTBhelper('waitFor',questionTime,kbIdx,escapeKey);
-                    %PTBhelper('stimText', wPtr, %%%QUESTION TEXT%%%%% , fixFontSize);
-                    %AND RECORD INPUT!!
+                    PTBhelper('stimText', wPtr, theQ,fixFontSize);
+                    %record input:
+                    record_resp = PTBhelper('waitFor',questionTime,kbIdx,escapeKey);
+                    %we just want the key that is pressed:
+                    resp = record_resp{1};
+                    if resp == '1!' % record yes if 1 is pressed
+                        results.Response{eventNum} = 'Y';
+                    elseif resp == '2@' %record no if 2 is pressed
+                        results.Response{eventNum} = 'N';
+                    end
+                %Was the response correct? 
+                    if results.Response{eventNum} == theA
+                        results.Correct{eventNum} = 'Y';
+                    else 
+                        results.Correct{eventNum} = 'N';
+                    end
                 end
-
-                
                               
                 %Save Sentence, agent info to results
                 results.Sentence{eventNum} = sentence;
