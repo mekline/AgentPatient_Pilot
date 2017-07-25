@@ -362,8 +362,7 @@ start_time = GetSecs;
             %%(v. useful for debugging)
             results.ActualOnset{eventNum} = actualOnset;
             actualDuration = GetSecs - (actualOnset + runOnset);
-            results.ActualDuration{eventNum} = actualDuration;
-            
+            results.ActualDuration{eventNum} = actualDuration;          
         end
 
         ran_completely = true;
