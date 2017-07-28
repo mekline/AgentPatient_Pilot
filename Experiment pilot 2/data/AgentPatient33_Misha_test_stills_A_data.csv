@@ -1,0 +1,113 @@
+Trial,SubjID,Run,Order,ItemNumber,IntendedOnset,ActualOnset,IntendedDuration,ActualDuration,Condition,Flip,FlipMeaning,Sentence,AgentName,AgentShape,PatientName,PatientShape,BaseFilename,BlinkFilename,Response,Correct
+1,Misha_test,,A,25,0,0.000492318000397063,4,4.00020968299941,Patient,1,flipped,Kyle Square is being shaken by Lily Triangle.,Lily,Triangle,Kyle,Square,Base_flipped_25.jpg,Patient_flipped_25.jpg,,
+2,Misha_test,,A,25,4,4.00158666399966,4,3.99929972200061,Agent,1,flipped,Kyle Square is being shaken by Lily Triangle.,Lily,Triangle,Kyle,Square,Base_flipped_25.jpg,Agent_flipped_25.jpg,,
+,Misha_test,,A,NA,8,8.00143161800042,6,6.00061956699938,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+3,Misha_test,,A,40,14,14.0026516670005,4,3.99863657899914,Agent,1,flipped,Kyle Square is being shaken by Zach Star.,Zach,Star,Kyle,Square,Base_flipped_40.jpg,Agent_flipped_40.jpg,,
+4,Misha_test,,A,40,18,18.0017134740001,4,3.99929556799998,Agent,0,orig,Zach Star is shaking Kyle Square.,Zach,Star,Kyle,Square,Base_orig_40.jpg,Agent_orig_40.jpg,,
+,Misha_test,,A,NA,22,22.0014244260001,4,4.00107843499973,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+5,Misha_test,,A,7,26,26.0029656830002,4,3.99805057699996,Agent,0,orig,Kyle Square is rolling Lily Triangle.,Kyle,Square,Lily,Triangle,Base_orig_7.jpg,Agent_orig_7.jpg,,
+,Misha_test,,A,NA,30,30.0014259070003,2,2.00066485499974,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+6,Misha_test,,A,8,32,32.0025560570002,4,3.99876191200019,Patient,0,orig,Kyle Square is rolling Zach Star.,Kyle,Square,Zach,Star,Base_orig_8.jpg,Patient_orig_8.jpg,,
+7,Misha_test,,A,35,36,36.0017579109999,4,3.99909311200008,Agent,1,flipped,Lily Triangle is being bounced by Zach Star.,Zach,Star,Lily,Triangle,Base_flipped_35.jpg,Agent_flipped_35.jpg,,
+,Misha_test,,A,NA,40,40.0012675489997,2,2.00081682400014,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+8,Misha_test,,A,8,42,42.0025836060004,4,3.99859876099981,Agent,1,flipped,Zach Star is being rolled by Kyle Square.,Kyle,Square,Zach,Star,Base_flipped_8.jpg,Agent_flipped_8.jpg,,
+9,Misha_test,,A,19,46,46.0016223860002,4,3.99895881900011,Agent,1,flipped,Kyle Square is being bounced by Lily Triangle.,Lily,Triangle,Kyle,Square,Base_flipped_19.jpg,Agent_flipped_19.jpg,,
+,Misha_test,,A,NA,50,50.000976882,6,6.00066859799972,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+10,Misha_test,,A,41,56,56.0021482080001,10,9.998744429,Patient,0,orig,Zach Star is shaking Lily Triangle.,Zach,Star,Lily,Triangle,Base_orig_41.jpg,Patient_orig_41.jpg,,N
+11,Misha_test,,A,4,66,66.0012312449999,4,4.00008508399969,Patient,1,flipped,Lily Triangle is being bounced by Kyle Square.,Kyle,Square,Lily,Triangle,Base_flipped_4.jpg,Patient_flipped_4.jpg,,
+,Misha_test,,A,NA,70,70.0016724079996,4,3.99988864700026,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+12,Misha_test,,A,19,74,74.0019854869997,4,3.9984166990007,Agent,0,orig,Lily Triangle is bouncing Kyle Square.,Lily,Triangle,Kyle,Square,Base_orig_19.jpg,Agent_orig_19.jpg,,
+,Misha_test,,A,NA,78,78.0007630150003,4,4.00085476699951,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+13,Misha_test,,A,8,82,82.001979439,4,3.9993454659998,Patient,1,flipped,Zach Star is being rolled by Kyle Square.,Kyle,Square,Zach,Star,Base_flipped_8.jpg,Patient_flipped_8.jpg,,
+14,Misha_test,,A,34,86,86.0016866440001,4,3.99945833499987,Patient,1,flipped,Kyle Square is being bounced by Zach Star.,Zach,Star,Kyle,Square,Base_flipped_34.jpg,Patient_flipped_34.jpg,,
+15,Misha_test,,A,23,90,90.0014756829996,4,3.99983085000076,Patient,0,orig,Lily Triangle is rolling Zach Star.,Lily,Triangle,Zach,Star,Base_orig_23.jpg,Patient_orig_23.jpg,,
+16,Misha_test,,A,4,94,94.0016831530002,4,3.99953188600011,Agent,1,flipped,Lily Triangle is being bounced by Kyle Square.,Kyle,Square,Lily,Triangle,Base_flipped_4.jpg,Agent_flipped_4.jpg,,
+17,Misha_test,,A,23,98,98.0015840879996,4,3.99884015400039,Agent,1,flipped,Zach Star is being rolled by Lily Triangle.,Lily,Triangle,Zach,Star,Base_flipped_23.jpg,Agent_flipped_23.jpg,,
+,Misha_test,,A,NA,102,102.000755552,4,4.00073240000074,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+18,Misha_test,,A,38,106,106.001875771,4,3.99855908099926,Patient,1,flipped,Lily Triangle is being rolled by Zach Star.,Zach,Star,Lily,Triangle,Base_flipped_38.jpg,Patient_flipped_38.jpg,,
+,Misha_test,,A,NA,110,110.000766659,2,2.0013341519998,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+19,Misha_test,,A,38,112,112.002468171,4,3.99896812399948,Patient,0,orig,Zach Star is rolling Lily Triangle.,Zach,Star,Lily,Triangle,Base_orig_38.jpg,Patient_orig_38.jpg,,
+20,Misha_test,,A,26,116,116.001827408,4,3.99885190899931,Agent,0,orig,Lily Triangle is shaking Zach Star.,Lily,Triangle,Zach,Star,Base_orig_26.jpg,Agent_orig_26.jpg,,
+,Misha_test,,A,NA,120,120.00104831,4,4.0007977209998,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+21,Misha_test,,A,22,124,124.00221765,4,3.9990229390005,Patient,0,orig,Lily Triangle is rolling Kyle Square.,Lily,Triangle,Kyle,Square,Base_orig_22.jpg,Patient_orig_22.jpg,,
+,Misha_test,,A,NA,128,128.00168752,2,1.99999711800046,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+22,Misha_test,,A,11,130,130.002049765,4,3.998947821,Patient,1,flipped,Zach Star is being shaken by Kyle Square.,Kyle,Square,Zach,Star,Base_flipped_11.jpg,Patient_flipped_11.jpg,,
+,Misha_test,,A,NA,134,134.001444239,2,2.00006860600024,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+23,Misha_test,,A,38,136,136.001889915,4,3.99874998500036,Agent,1,flipped,Lily Triangle is being rolled by Zach Star.,Zach,Star,Lily,Triangle,Base_flipped_38.jpg,Agent_flipped_38.jpg,,
+,Misha_test,,A,NA,140,140.001053445,2,2.0009312000002,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+24,Misha_test,,A,26,142,142.002352748,4,3.99849532999997,Patient,0,orig,Lily Triangle is shaking Zach Star.,Lily,Triangle,Zach,Star,Base_orig_26.jpg,Patient_orig_26.jpg,,
+,Misha_test,,A,NA,146,146.001228369,6,6.0008296699998,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+25,Misha_test,,A,20,152,152.002421497,10,9.99828728800003,Agent,1,flipped,Zach Star is being bounced by Lily Triangle.,Lily,Triangle,Zach,Star,Base_flipped_20.jpg,Agent_flipped_20.jpg,,N
+,Misha_test,,A,NA,162,162.001085889,2,2.00114019499961,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+26,Misha_test,,A,20,164,164.002586028,4,3.9982314179997,Agent,0,orig,Lily Triangle is bouncing Zach Star.,Lily,Triangle,Zach,Star,Base_orig_20.jpg,Agent_orig_20.jpg,,
+27,Misha_test,,A,5,168,168.001182552,4,3.99933304800015,Agent,1,flipped,Zach Star is being bounced by Kyle Square.,Kyle,Square,Zach,Star,Base_flipped_5.jpg,Agent_flipped_5.jpg,,
+28,Misha_test,,A,20,172,172.000946411,4,3.99964175200057,Patient,1,flipped,Zach Star is being bounced by Lily Triangle.,Lily,Triangle,Zach,Star,Base_flipped_20.jpg,Patient_flipped_20.jpg,,
+29,Misha_test,,A,38,176,176.000989796,4,3.99956151300012,Agent,0,orig,Zach Star is rolling Lily Triangle.,Zach,Star,Lily,Triangle,Base_orig_38.jpg,Agent_orig_38.jpg,,
+30,Misha_test,,A,35,180,180.000963785,4,3.99980740400042,Patient,0,orig,Zach Star is bouncing Lily Triangle.,Zach,Star,Lily,Triangle,Base_orig_35.jpg,Patient_orig_35.jpg,,
+,Misha_test,,A,NA,184,184.001140203,6,6.00120417599919,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+31,Misha_test,,A,40,190,190.002744186,4,3.99780238999938,Patient,1,flipped,Kyle Square is being shaken by Zach Star.,Zach,Star,Kyle,Square,Base_flipped_40.jpg,Patient_flipped_40.jpg,,
+,Misha_test,,A,NA,194,194.001133979,6,6.00026667200018,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+32,Misha_test,,A,23,200,200.0017909,4,3.99954550100028,Patient,1,flipped,Zach Star is being rolled by Lily Triangle.,Lily,Triangle,Zach,Star,Base_flipped_23.jpg,Patient_flipped_23.jpg,,
+,Misha_test,,A,NA,204,204.001702294,2,2.0001889590003,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+33,Misha_test,,A,22,206,206.002293409,10,9.99855023100008,Patient,1,flipped,Kyle Square is being rolled by Lily Triangle.,Lily,Triangle,Kyle,Square,Base_flipped_22.jpg,Patient_flipped_22.jpg,,N
+,Misha_test,,A,NA,216,216.001218276,2,2.00078123099956,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+34,Misha_test,,A,7,218,218.002388837,4,3.99797958999989,Patient,0,orig,Kyle Square is rolling Lily Triangle.,Kyle,Square,Lily,Triangle,Base_orig_7.jpg,Patient_orig_7.jpg,,
+,Misha_test,,A,NA,222,222.000745568,2,2.00143256899992,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+35,Misha_test,,A,19,224,224.002536455,4,3.99787998400006,Patient,1,flipped,Kyle Square is being bounced by Lily Triangle.,Lily,Triangle,Kyle,Square,Base_flipped_19.jpg,Patient_flipped_19.jpg,,
+36,Misha_test,,A,10,228,228.000773012,4,3.99976121800046,Patient,1,flipped,Lily Triangle is being shaken by Kyle Square.,Kyle,Square,Lily,Triangle,Base_flipped_10.jpg,Patient_flipped_10.jpg,,
+,Misha_test,,A,NA,232,232.000908326,4,4.00152930100012,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+37,Misha_test,,A,37,236,236.002797614,4,3.99808091300019,Patient,1,flipped,Kyle Square is being rolled by Zach Star.,Zach,Star,Kyle,Square,Base_flipped_37.jpg,Patient_flipped_37.jpg,,
+,Misha_test,,A,NA,240,240.001244528,2,2.0004475249998,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+38,Misha_test,,A,41,242,242.002146756,4,3.99817597099991,Agent,1,flipped,Lily Triangle is being shaken by Zach Star.,Zach,Star,Lily,Triangle,Base_flipped_41.jpg,Agent_flipped_41.jpg,,
+,Misha_test,,A,NA,246,246.000842479,2,2.00161357399975,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+39,Misha_test,,A,4,248,248.002811388,4,3.99781831600012,Patient,0,orig,Kyle Square is bouncing Lily Triangle.,Kyle,Square,Lily,Triangle,Base_orig_4.jpg,Patient_orig_4.jpg,,
+40,Misha_test,,A,19,252,252.000995287,4,3.99960916100008,Patient,0,orig,Lily Triangle is bouncing Kyle Square.,Lily,Triangle,Kyle,Square,Base_orig_19.jpg,Patient_orig_19.jpg,,
+41,Misha_test,,A,37,256,256.000935903,4,3.99957196000014,Agent,0,orig,Zach Star is rolling Kyle Square.,Zach,Star,Kyle,Square,Base_orig_37.jpg,Agent_orig_37.jpg,,
+,Misha_test,,A,NA,260,260.000839818,4,4.00121232800029,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+42,Misha_test,,A,26,264,264.002417723,4,3.99797468700035,Patient,1,flipped,Zach Star is being shaken by Lily Triangle.,Lily,Triangle,Zach,Star,Base_flipped_26.jpg,Patient_flipped_26.jpg,,
+,Misha_test,,A,NA,268,268.000719958,2,2.0009989579994,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+43,Misha_test,,A,7,270,270.002081508,4,3.99876764000055,Patient,1,flipped,Lily Triangle is being rolled by Kyle Square.,Kyle,Square,Lily,Triangle,Base_flipped_7.jpg,Patient_flipped_7.jpg,,
+,Misha_test,,A,NA,274,274.001177113,2,2.00089785799992,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+44,Misha_test,,A,10,276,276.002503244,4,3.99856831299985,Agent,1,flipped,Lily Triangle is being shaken by Kyle Square.,Kyle,Square,Lily,Triangle,Base_flipped_10.jpg,Agent_flipped_10.jpg,,
+45,Misha_test,,A,20,280,280.001398414,4,3.99922926500039,Patient,0,orig,Lily Triangle is bouncing Zach Star.,Lily,Triangle,Zach,Star,Base_orig_20.jpg,Patient_orig_20.jpg,,
+46,Misha_test,,A,11,284,284.000954484,4,4.00011772999915,Patient,0,orig,Kyle Square is shaking Zach Star.,Kyle,Square,Zach,Star,Base_orig_11.jpg,Patient_orig_11.jpg,,
+,Misha_test,,A,NA,288,288.001400259,4,4.00100642300004,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+47,Misha_test,,A,34,292,292.00276884,4,3.99812549500075,Agent,1,flipped,Kyle Square is being bounced by Zach Star.,Zach,Star,Kyle,Square,Base_flipped_34.jpg,Agent_flipped_34.jpg,,
+48,Misha_test,,A,11,296,296.001224464,4,3.99963449699953,Agent,0,orig,Kyle Square is shaking Zach Star.,Kyle,Square,Zach,Star,Base_orig_11.jpg,Agent_orig_11.jpg,,
+49,Misha_test,,A,25,300,300.001309836,4,4.00007951700081,Agent,0,orig,Lily Triangle is shaking Kyle Square.,Lily,Triangle,Kyle,Square,Base_orig_25.jpg,Agent_orig_25.jpg,,
+,Misha_test,,A,NA,304,304.001945516,6,5.99972570000045,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+50,Misha_test,,A,5,310,310.002013626,4,3.99907160000021,Agent,0,orig,Kyle Square is bouncing Zach Star.,Kyle,Square,Zach,Star,Base_orig_5.jpg,Agent_orig_5.jpg,,
+,Misha_test,,A,NA,314,314.001428845,2,2.00071237999964,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+51,Misha_test,,A,25,316,316.002473698,4,3.99806740199983,Patient,0,orig,Lily Triangle is shaking Kyle Square.,Lily,Triangle,Kyle,Square,Base_orig_25.jpg,Patient_orig_25.jpg,,
+52,Misha_test,,A,22,320,320.000865478,4,4.00013064599989,Agent,1,flipped,Kyle Square is being rolled by Lily Triangle.,Lily,Triangle,Kyle,Square,Base_flipped_22.jpg,Agent_flipped_22.jpg,,
+53,Misha_test,,A,34,324,324.001323816,4,3.99904638400039,Patient,0,orig,Zach Star is bouncing Kyle Square.,Zach,Star,Kyle,Square,Base_orig_34.jpg,Patient_orig_34.jpg,,
+,Misha_test,,A,NA,328,328.000695815,8,8.00130735699986,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+54,Misha_test,,A,37,336,336.002326088,4,3.99796826500005,Patient,0,orig,Zach Star is rolling Kyle Square.,Zach,Star,Kyle,Square,Base_orig_37.jpg,Patient_orig_37.jpg,,
+55,Misha_test,,A,40,340,340.000616309,10,9.9998799189998,Patient,0,orig,Zach Star is shaking Kyle Square.,Zach,Star,Kyle,Square,Base_orig_40.jpg,Patient_orig_40.jpg,Y,Y
+56,Misha_test,,A,35,350,350.000840321,4,3.99945086799926,Agent,0,orig,Zach Star is bouncing Lily Triangle.,Zach,Star,Lily,Triangle,Base_orig_35.jpg,Agent_orig_35.jpg,,
+,Misha_test,,A,NA,354,354.00061875,8,8.00176410099994,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+57,Misha_test,,A,26,362,362.002709066,4,3.9975985910005,Agent,1,flipped,Zach Star is being shaken by Lily Triangle.,Lily,Triangle,Zach,Star,Base_flipped_26.jpg,Agent_flipped_26.jpg,,
+,Misha_test,,A,NA,366,366.000636859,2,2.0019094219997,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+58,Misha_test,,A,34,368,368.002879436,4,3.99841764700068,Agent,0,orig,Zach Star is bouncing Kyle Square.,Zach,Star,Kyle,Square,Base_orig_34.jpg,Agent_orig_34.jpg,,
+59,Misha_test,,A,41,372,372.001624189,4,3.99877298499996,Agent,0,orig,Zach Star is shaking Lily Triangle.,Zach,Star,Lily,Triangle,Base_orig_41.jpg,Agent_orig_41.jpg,,
+,Misha_test,,A,NA,376,376.000727228,6,6.00069455700032,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+60,Misha_test,,A,23,382,382.001747147,4,3.9989920629996,Agent,0,orig,Lily Triangle is rolling Zach Star.,Lily,Triangle,Zach,Star,Base_orig_23.jpg,Agent_orig_23.jpg,,
+61,Misha_test,,A,22,386,386.001065588,4,3.9993713140002,Agent,0,orig,Lily Triangle is rolling Kyle Square.,Lily,Triangle,Kyle,Square,Base_orig_22.jpg,Agent_orig_22.jpg,,
+62,Misha_test,,A,5,390,390.0007611,4,3.99949369800015,Patient,1,flipped,Zach Star is being bounced by Kyle Square.,Kyle,Square,Zach,Star,Base_flipped_5.jpg,Patient_flipped_5.jpg,,
+,Misha_test,,A,NA,394,394.000587109,4,4.00115857000037,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+63,Misha_test,,A,10,398,398.002069724,10,9.99864174699997,Agent,0,orig,Kyle Square is shaking Lily Triangle.,Kyle,Square,Lily,Triangle,Base_orig_10.jpg,Agent_orig_10.jpg,,N
+,Misha_test,,A,NA,408,408.001056622,4,4.00077322800007,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+64,Misha_test,,A,35,412,412.002468749,10,9.9987922349992,Patient,1,flipped,Lily Triangle is being bounced by Zach Star.,Zach,Star,Lily,Triangle,Base_flipped_35.jpg,Patient_flipped_35.jpg,,N
+65,Misha_test,,A,8,422,422.001619691,4,3.99963334099994,Agent,0,orig,Kyle Square is rolling Zach Star.,Kyle,Square,Zach,Star,Base_orig_8.jpg,Agent_orig_8.jpg,,
+,Misha_test,,A,NA,426,426.001614669,4,4.00011127499965,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+66,Misha_test,,A,11,430,430.002053102,4,3.99824722300036,Agent,1,flipped,Zach Star is being shaken by Kyle Square.,Kyle,Square,Zach,Star,Base_flipped_11.jpg,Agent_flipped_11.jpg,,
+,Misha_test,,A,NA,434,434.00065589,2,2.00146137399952,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+67,Misha_test,,A,7,436,436.002439232,4,3.99854684499951,Agent,1,flipped,Lily Triangle is being rolled by Kyle Square.,Kyle,Square,Lily,Triangle,Base_flipped_7.jpg,Agent_flipped_7.jpg,,
+68,Misha_test,,A,4,440,440.001309562,10,9.99960887599991,Agent,0,orig,Kyle Square is bouncing Lily Triangle.,Kyle,Square,Lily,Triangle,Base_orig_4.jpg,Agent_orig_4.jpg,Y,Y
+,Misha_test,,A,NA,450,450.001260395,2,2.00047583099968,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+69,Misha_test,,A,37,452,452.002064714,10,9.9989504060004,Agent,1,flipped,Kyle Square is being rolled by Zach Star.,Zach,Star,Kyle,Square,Base_flipped_37.jpg,Agent_flipped_37.jpg,,N
+70,Misha_test,,A,41,462,462.001353663,4,3.99991204599974,Patient,1,flipped,Lily Triangle is being shaken by Zach Star.,Zach,Star,Lily,Triangle,Base_flipped_41.jpg,Patient_flipped_41.jpg,,
+,Misha_test,,A,NA,466,466.001593499,2,2.00021594999998,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+71,Misha_test,,A,5,468,468.002134078,4,3.99826102099996,Patient,0,orig,Kyle Square is bouncing Zach Star.,Kyle,Square,Zach,Star,Base_orig_5.jpg,Patient_orig_5.jpg,,
+72,Misha_test,,A,10,472,472.00072455,4,3.99955467400014,Patient,0,orig,Kyle Square is shaking Lily Triangle.,Kyle,Square,Lily,Triangle,Base_orig_10.jpg,Patient_orig_10.jpg,,
+,Misha_test,,A,NA,476,476.000605106,4,4.00141516999975,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
