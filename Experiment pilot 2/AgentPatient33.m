@@ -182,14 +182,26 @@ start_time = GetSecs;
     base_files = cell(1,72);
     base_stims = cell(1,72);
     
-    %feedback images 
-    %feedback_files = cell(1,1);% can be changed if more than one feedback image is used
-    
     IMAGE_DIR = fullfile(pwd, 'images', image_type); %the folder we're taking images from
-    %FEEDBACK_DIR = fullfile(pwd, 'images', 'feedback');
-    %feedback_name = ['feedback_' char(feedback_num) '.jpg']; 
-    %feedback_img{feedback_num} = Screen('MakeTexture', wPtr, double(feedback));
     
+    %FEEDBACK IMAGES
+    feedback_count = 1; %number of feedback images
+    feedback_img = cell(1, feedback_count);
+    counter = 1;
+    
+    for feedback_num=1:feedback_count
+       FEEDBACK_DIR = fullfile(pwd, 'images', 'feedback'); 
+       feedback_name = 'feedback_1.jpg' ;
+       feedback_files{1, counter} = fullfile(FEEDBACK_DIR, feedback_name);
+       feedback = feedback_files{counter};
+       feedback = imread(feedback, 'jpg');
+       fclose('all');
+       feedback_img{counter} = Screen('MakeTexture', wPtr, double(feedback));
+       counter = counter + 1;
+    end
+  
+    
+    %SET UP EXPT IMAGES
     index = 1; %counter
     load_start_time = GetSecs;
     for eventNum=1:numEvents
@@ -208,10 +220,12 @@ start_time = GetSecs;
 
             %what is the name of the image we want
             img_name = [char(condition) '_' flip_word '_' char(all_materials.ItemNumber{eventNum}) '.jpg'];
-            base_name = ['Base_' flip_word '_' char(all_materials.ItemNumber{eventNum}) '.jpg'];            
+            base_name = ['Base_' flip_word '_' char(all_materials.ItemNumber{eventNum}) '.jpg'];    
+
             %put it into a cell with the other image files
             img_files{1,index} = fullfile(IMAGE_DIR, img_name);
             base_files{1,index} = fullfile(IMAGE_DIR, base_name);
+    
                 
             %read in the base and highlight file we want
             base = base_files{index};
@@ -245,7 +259,7 @@ start_time = GetSecs;
     PTBhelper('waitFor','TRIGGER',kbIdx,escapeKey);
     runOnset = GetSecs; %remains the same
     item_index = 1;
-    
+    feedback_type = 1; %only display 1st feedback file for now
     %Present each event
     try
         for eventNum = 1:numEvents
@@ -324,17 +338,19 @@ start_time = GetSecs;
                     %we just want the key that is pressed:
                     resp = record_resp{1};
                     rt = record_resp{2};
-                    %feedback_dur = TimeQ - rt;
+                    feedback_dur = questionTime - rt;
                     if resp == '1!' % record yes if 1 is pressed
                         results.Response{eventNum} = 'Y';
-                        %PTBhelper('stimImage', wPtr, 1, feedback_img)
+                        PTBhelper('stimImage', wPtr, 1, feedback_img); %1 = neutral image
+                        %PTBhelper('stimText', wPtr, 'Thank you!', fixFontSize)
                     elseif resp == '2@' %record no if 2 is pressed
                         results.Response{eventNum} = 'N';
-                        %PTBhelper('stimImage', wPtr, 1, feedback_img)
-                        %WaitSecs(feedback_dur);
+                        PTBhelper('stimImage', wPtr, 1, feedback_img);
+                        %PTBhelper('stimText', wPtr, 'Thank you!', fixFontSize)
+                    WaitSecs(feedback_dur);
                     end
                 %Was the response correct? 
-                    if results.Response{eventNum} == theA
+    if results.Response{eventNum} == theA
                         results.Correct{eventNum} = 'Y';
                     else 
                         results.Correct{eventNum} = 'N';
@@ -363,7 +379,7 @@ start_time = GetSecs;
             results.ActualOnset{eventNum} = actualOnset;
             actualDuration = GetSecs - (actualOnset + runOnset);
             results.ActualDuration{eventNum} = actualDuration;          
-        end
+    end
 
         ran_completely = true;
         
