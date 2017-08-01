@@ -184,20 +184,22 @@ start_time = GetSecs;
     
     IMAGE_DIR = fullfile(pwd, 'images', image_type); %the folder we're taking images from
     
-    %FEEDBACK IMAGES
-    feedback_count = 1; %number of feedback images
-    feedback_img = cell(1, feedback_count);
-    counter = 1;
+    % SET UP FEEDBACK IMAGES
+    feedback_count = 2; %number of feedback images
+    feedback_img = cell(1, feedback_count); %create feedback image struct
+    counter = 1; 
     
     for feedback_num=1:feedback_count
-       FEEDBACK_DIR = fullfile(pwd, 'images', 'feedback'); 
-       feedback_name = 'feedback_1.jpg' ;
+       FEEDBACK_DIR = fullfile(pwd, 'images', 'feedback'); %folder with feedback images
+       feedback_name = ['feedback_',num2str(feedback_num),'.jpg'] ; %get feedback image name
        feedback_files{1, counter} = fullfile(FEEDBACK_DIR, feedback_name);
+       %read in feedback image file
        feedback = feedback_files{counter};
        feedback = imread(feedback, 'jpg');
        fclose('all');
+       %make feedback image a texture in our feedback image struct
        feedback_img{counter} = Screen('MakeTexture', wPtr, double(feedback));
-       counter = counter + 1;
+       counter = counter + 1; %increment to maintain order
     end
   
     
@@ -259,7 +261,6 @@ start_time = GetSecs;
     PTBhelper('waitFor','TRIGGER',kbIdx,escapeKey);
     runOnset = GetSecs; %remains the same
     item_index = 1;
-    feedback_type = 1; %only display 1st feedback file for now
     %Present each event
     try
         for eventNum = 1:numEvents
@@ -341,19 +342,16 @@ start_time = GetSecs;
                     feedback_dur = questionTime - rt;
                     if resp == '1!' % record yes if 1 is pressed
                         results.Response{eventNum} = 'Y';
-                        PTBhelper('stimImage', wPtr, 1, feedback_img); %1 = neutral image
-                        %PTBhelper('stimText', wPtr, 'Thank you!', fixFontSize)
                     elseif resp == '2@' %record no if 2 is pressed
-                        results.Response{eventNum} = 'N';
-                        PTBhelper('stimImage', wPtr, 1, feedback_img);
-                        %PTBhelper('stimText', wPtr, 'Thank you!', fixFontSize)
-                    WaitSecs(feedback_dur);
+                        results.Response{eventNum} = 'N';   
                     end
                 %Was the response correct? 
-    if results.Response{eventNum} == theA
+                    if results.Response{eventNum} == theA
                         results.Correct{eventNum} = 'Y';
-                    else 
+                         PTBhelper('stimImage', wPtr, 1, feedback_img); %show green check for correct
+                    else
                         results.Correct{eventNum} = 'N';
+                         PTBhelper('stimImage', wPtr, 2, feedback_img); %show red x for incorrect
                     end
                 end
                               
