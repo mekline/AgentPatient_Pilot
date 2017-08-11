@@ -67,8 +67,8 @@ start_time = GetSecs;
     FIX_DUR     = 0.0; %Length of trial-initial fixation
     ITI         = 0.2; %Inter-trial interval
     BLINK_DUR   = 0.1; %Length of one blink on or off
-    TIME_TO_Q   = 4.0; %delay until question, for question trials
-    TIME_Q      = 2.0; %time question visible, for question trials
+    TIME_TO_Q   = 2.0; %delay until question, for question trials
+    TIME_Q      = 4.0; %time question visible, for question trials
     SCREEN_ADJUST = 1.2; %factor to adjust aspect ratio by
     
     %Based on image type (sentences or stills), decide what Flip means
@@ -333,7 +333,7 @@ start_time = GetSecs;
                 %Play a question if applicable!
                 if question
                     PTBhelper('stimText', wPtr, '+', fixFontSize);
-                    PTBhelper('stimText', wPtr, theQ,fixFontSize);
+                    PTBhelper('stimText', wPtr, strcat(theQ, '\n Press 1 for yes, 2 for no'),fixFontSize);
                     %record input:
                     record_resp = PTBhelper('waitFor',questionTime,kbIdx,escapeKey);
                     %we just want the key that is pressed:

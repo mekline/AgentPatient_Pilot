@@ -1,16 +1,16 @@
 Trial,SubjID,Run,Order,ItemNumber,IntendedOnset,ActualOnset,IntendedDuration,ActualDuration,Condition,Flip,FlipMeaning,Sentence,AgentName,AgentShape,PatientName,PatientShape,BaseFilename,BlinkFilename,Response,Correct
-1,feedback_check3,,D,26,0,0.00195162200000709,10,10.00027374,Patient,1,flipped,Zach Star is being shaken by Lily Triangle.,Lily,Triangle,Zach,Star,Base_flipped_26.jpg,Patient_flipped_26.jpg,N,Y
-,feedback_check3,,D,NA,10,10.003875528,6,6.00128453299999,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
-2,feedback_check3,,D,5,16,16.006159698,4,3.99540369299999,Agent,0,orig,Kyle Square is bouncing Zach Star.,Kyle,Square,Zach,Star,Base_orig_5.jpg,Agent_orig_5.jpg,,
-3,feedback_check3,,D,19,20,20.002255467,4,3.99881876800001,Patient,1,flipped,Kyle Square is being bounced by Lily Triangle.,Lily,Triangle,Kyle,Square,Base_flipped_19.jpg,Patient_flipped_19.jpg,,
-,feedback_check3,,D,NA,24,24.001484102,2,2.00029584500004,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
-4,feedback_check3,,D,4,26,26.002240788,4,3.99916956799996,Agent,0,orig,Kyle Square is bouncing Lily Triangle.,Kyle,Square,Lily,Triangle,Base_orig_4.jpg,Agent_orig_4.jpg,,
-,feedback_check3,,D,NA,30,30.002205715,4,3.99969075799999,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
-5,feedback_check3,,D,10,34,34.002398238,4,3.99821832800001,Agent,0,orig,Kyle Square is shaking Lily Triangle.,Kyle,Square,Lily,Triangle,Base_orig_10.jpg,Agent_orig_10.jpg,,
-,feedback_check3,,D,NA,38,38.00106559,2,2.00137275599997,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
-6,feedback_check3,,D,19,40,40.002953451,4,3.99854654699999,Agent,0,orig,Lily Triangle is bouncing Kyle Square.,Lily,Triangle,Kyle,Square,Base_orig_19.jpg,Agent_orig_19.jpg,,
-,feedback_check3,,D,NA,44,44.00199463,2,2.00003896200002,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
-7,feedback_check3,,D,23,46,46.002478526,4,3.998432584,Patient,0,orig,Lily Triangle is rolling Zach Star.,Lily,Triangle,Zach,Star,Base_orig_23.jpg,Patient_orig_23.jpg,,
+1,feedback_check3,,D,26,0,0.00277837802423164,10,9.99866079300409,Patient,1,flipped,Zach Star is being shaken by Lily Triangle.,Lily,Triangle,Zach,Star,Base_flipped_26.jpg,Patient_flipped_26.jpg,,N
+,feedback_check3,,D,NA,10,,6,,Fixation,NA,,,,,,,,,,
+2,feedback_check3,,D,5,16,,4,,Agent,0,orig,,,,,,Base_orig_5.jpg,Agent_orig_5.jpg,,
+3,feedback_check3,,D,19,20,,4,,Patient,1,flipped,,,,,,Base_flipped_19.jpg,Patient_flipped_19.jpg,,
+,feedback_check3,,D,NA,24,,2,,Fixation,NA,,,,,,,,,,
+4,feedback_check3,,D,4,26,,4,,Agent,0,orig,,,,,,Base_orig_4.jpg,Agent_orig_4.jpg,,
+,feedback_check3,,D,NA,30,,4,,Fixation,NA,,,,,,,,,,
+5,feedback_check3,,D,10,34,,4,,Agent,0,orig,,,,,,Base_orig_10.jpg,Agent_orig_10.jpg,,
+,feedback_check3,,D,NA,38,,2,,Fixation,NA,,,,,,,,,,
+6,feedback_check3,,D,19,40,,4,,Agent,0,orig,,,,,,Base_orig_19.jpg,Agent_orig_19.jpg,,
+,feedback_check3,,D,NA,44,,2,,Fixation,NA,,,,,,,,,,
+7,feedback_check3,,D,23,46,,4,,Patient,0,orig,,,,,,Base_orig_23.jpg,Patient_orig_23.jpg,,
 ,feedback_check3,,D,NA,50,,4,,Fixation,NA,,,,,,,,,,
 8,feedback_check3,,D,19,54,,4,,Patient,0,orig,,,,,,Base_orig_19.jpg,Patient_orig_19.jpg,,
 9,feedback_check3,,D,8,58,,4,,Agent,0,orig,,,,,,Base_orig_8.jpg,Agent_orig_8.jpg,,
