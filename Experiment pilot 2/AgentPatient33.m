@@ -153,6 +153,7 @@ start_time = GetSecs;
     end
 
 	%% Set up screen and keyboard for Psychtoolbox
+    
     %Screen
     screenNum = max(Screen('Screens'));  %Highest screen number is most likely correct display
     windowInfo = PTBhelper('initialize',screenNum);
@@ -162,7 +163,17 @@ start_time = GetSecs;
         winHeight = rect(4)*SCREEN_ADJUST;
     oldEnableFlag = windowInfo{4};
     HideCursor;
-    PTBhelper('stimImage',wPtr,'WHITE');
+    PTBhelper('stimImage', wPtr, 'WHITE');
+    %Welcome Screen Setup
+    WELCOME_DIR = fullfile(pwd, 'images', 'Welcome_Screen');
+        welcome_img = cell(1,1);
+        welcome_name = 'Welcome_Screen.001.jpg';
+        welcome_files{1,1} = fullfile(WELCOME_DIR, welcome_name);
+        welcome = welcome_files{1};
+        welcome = imread(welcome, 'jpg');
+        fclose('all');
+        welcome_img{1} = Screen('MakeTexture', wPtr, double(welcome)); 
+            
     PTBhelper('stimText',wPtr,'Loading images\n\n(Don''t start yet!)',30);
      
     %Keyboard
@@ -170,6 +181,8 @@ start_time = GetSecs;
     keyboardInfo = PTBhelper('getKeyboardIndex');
     kbIdx = [keyboardInfo{1}];
     escapeKey = keyboardInfo{2};
+    
+    %Display Welcome Screen
     
     %% Set up cells containing image file data
     %Initialize the cells and IMAGE_DIR
@@ -183,6 +196,7 @@ start_time = GetSecs;
     base_stims = cell(1,72);
     
     IMAGE_DIR = fullfile(pwd, 'images', image_type); %the folder we're taking images from
+
     
     % SET UP FEEDBACK IMAGES
     feedback_count = 2; %number of feedback images
@@ -245,14 +259,16 @@ start_time = GetSecs;
         results.FlipMeaning{eventNum} = char(flip_word);
         results.Trial{eventNum} = index;
         index = index+1; %increment counter, needed to keep images in the right spot on the image list
-        
+               
         PTBhelper('stimText',wPtr,['Loading images\n\n(Don''t start yet!)\n' num2str(index) '/120'],30);
  
         end
     end 
     load_end_time = GetSecs;
     load_time = load_end_time - load_start_time
-  
+    
+    PTBhelper('stimImage', wPtr, 1, welcome_img); %display intro image
+    PTBhelper('waitFor', 4.0, kbIdx,escapeKey); %EDIT -- FOR SOME REASON THIS DOESN'T SEEM TO WORK
 
     
     %% Present the experiment
@@ -415,7 +431,7 @@ function [wPtr, rect] = openDebugWindow(screenNum, rect)
     java; %clear java cache
     KbName('UnifyKeyNames');
     warning('off','MATLAB:dispatcher:InexactMatch');
-    AssertOpenGL;
+    AssertOpenGL;  
     suppress_warnings = 1;
     Screen('Preference', 'SuppressAllWarnings', suppress_warnings);
     Screen('Preference', 'TextRenderer', 0);
