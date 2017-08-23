@@ -1,25 +1,22 @@
 %AgentPatientStimuli.m
 % 
 % DESCRIPTION
-% Subjects view stimuli - either pictures or sentences ? about one shape
+% Subjects view stimuli - either pictures or sentences - about one shape
 % performing an action on another (e.g., 'Melissa Oval is being bounced by
 % Kyle Square'). Sometimes the agent is highlighted; other times the
 % patient is highlighted.
 % 
-% Run PsychStartup; in command line, then call the function
+% Function call: AgentPatient33(subjID, image_type, order)
 % 
-% Function call: AgentPatient33(subjID, image_type, order, run)
-% 
-% RUNTIME: should be 480 sec (8 min, 240 TRs) ##TOUPDATE
-%          -runs 10 times faster with subjID 'debug'
-%          -actually takes about 1475 sec due to lag
+% RUNTIME: 480 sec (8 min, 240 TRs)
+%   -runs 10 times faster with subjID 'debug'
 % 
 % INPUTS:
 %   -subjID: subject ID string
 %   -image_type: 'sentences' for sentence stimuli, 'stills' for picture
 %   stimuli
 %   -order: A, B, C D, or E; determines which preset item ordering to use
-%   -(Each participant should get at least XXX runs, each with a different
+%   -(Each participant should ideally get all 5 runs, each with a different
 %   ordering)
 % 
 % OUTPUT:
@@ -30,9 +27,12 @@
 % To change font size, go to Set display options.
 % If the aspect ratio is off, change SCREEN_ADJUST in Set experiment
 % constants until it looks better.
+
 function AgentPatient33(subjID, image_type, order)
-Screen('Preference', 'SkipSyncTests', 1)
-start_time = GetSecs;
+
+    PsychStartup;
+    Screen('Preference', 'SkipSyncTests', 1)
+    start_time = GetSecs;
     
 
     %% Make sure inputs are valid and raise an error otherwise
@@ -65,7 +65,7 @@ start_time = GetSecs;
     %% Set experiment constants
     %Timing (in seconds)              
     FIX_DUR     = 0.0; %Length of trial-initial fixation
-    ITI         = 0.2; %Inter-trial interval
+    ITI         = 0.2; %Inter-trial interval (display fixation cross)
     BLINK_DUR   = 0.1; %Length of one blink on or off
     TIME_TO_Q   = 2.0; %delay until question, for question trials
     TIME_Q      = 4.0; %time question visible, for question trials
@@ -259,17 +259,17 @@ start_time = GetSecs;
         results.FlipMeaning{eventNum} = char(flip_word);
         results.Trial{eventNum} = index;
         index = index+1; %increment counter, needed to keep images in the right spot on the image list
-               
-        PTBhelper('stimText',wPtr,['Loading images\n\n(Don''t start yet!)\n' num2str(index) '/120'],30);
- 
+         
+        %Display progress of loading
+        loadstring = strcat('Loading\n\n', num2str(index), '/120');
+        DrawFormattedText(wPtr, loadstring);
+        PTBhelper('stimImage', wPtr, 1, welcome_img); %display intro image
+        
         end
     end 
-    load_end_time = GetSecs;
-    load_time = load_end_time - load_start_time
     
-    PTBhelper('stimImage', wPtr, 1, welcome_img); %display intro image
-    PTBhelper('waitFor', 4.0, kbIdx,escapeKey); %EDIT -- FOR SOME REASON THIS DOESN'T SEEM TO WORK
-
+    load_end_time = GetSecs;
+    load_time = load_end_time - load_start_time;
     
     %% Present the experiment
 	% Wait indefinitely until trigger
