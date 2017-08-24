@@ -352,6 +352,7 @@ function AgentPatient33(subjID, image_type, order)
                     PTBhelper('stimText', wPtr, strcat(theQ, '\n Press 1 for yes, 2 for no'),fixFontSize);
                     %record input:
                     record_resp = PTBhelper('waitFor',questionTime,kbIdx,escapeKey);
+                    RestrictKeysForKbCheck(['1!','2@']); %only check key press status of these two keys
                     %we just want the key that is pressed:
                     resp = record_resp{1};
                     rt = record_resp{2};
@@ -369,6 +370,7 @@ function AgentPatient33(subjID, image_type, order)
                         results.Correct{eventNum} = 'N';
                          PTBhelper('stimImage', wPtr, 2, feedback_img); %show red x for incorrect
                     end
+                     RestrictKeysForKbCheck([]); %reenable all keys 
                 end
                               
                 %Save Sentence, agent info to results
