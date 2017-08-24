@@ -1,0 +1,113 @@
+Trial,SubjID,Run,Order,ItemNumber,IntendedOnset,ActualOnset,IntendedDuration,ActualDuration,Condition,Flip,FlipMeaning,Sentence,AgentName,AgentShape,PatientName,PatientShape,BaseFilename,BlinkFilename,Response,Correct
+1,FED_20170824a_3T2,,A,25,0,0.000550650991499424,4,4.00053597899387,Patient,1,passive,Kyle Square is being shaken by Lily Triangle.,Lily,Triangle,Kyle,Square,Base_passive_25.jpg,Patient_passive_25.jpg,,
+2,FED_20170824a_3T2,,A,25,4,4.0023082169937,4,3.99816097301664,Agent,1,passive,Kyle Square is being shaken by Lily Triangle.,Lily,Triangle,Kyle,Square,Base_passive_25.jpg,Agent_passive_25.jpg,,
+,FED_20170824a_3T2,,A,NA,8,8.00118339099572,6,6.00268648099154,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+3,FED_20170824a_3T2,,A,40,14,14.0048101099965,4,3.99729650601512,Agent,1,passive,Kyle Square is being shaken by Zach Star.,Zach,Star,Kyle,Square,Base_passive_40.jpg,Agent_passive_40.jpg,,
+4,FED_20170824a_3T2,,A,40,18,18.0028947170067,4,3.99757501500426,Agent,0,active,Zach Star is shaking Kyle Square.,Zach,Star,Kyle,Square,Base_active_40.jpg,Agent_active_40.jpg,,
+,FED_20170824a_3T2,,A,NA,22,22.001105295989,4,4.00245015599648,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+5,FED_20170824a_3T2,,A,7,26,26.0042260839837,4,3.99628377202316,Agent,0,active,Kyle Square is rolling Lily Triangle.,Kyle,Square,Lily,Triangle,Base_active_7.jpg,Agent_active_7.jpg,,
+,FED_20170824a_3T2,,A,NA,30,30.0011621550075,2,2.00240323899197,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+6,FED_20170824a_3T2,,A,8,32,32.0042212810076,4,3.99788635998266,Patient,0,active,Kyle Square is rolling Zach Star.,Kyle,Square,Zach,Star,Base_active_8.jpg,Patient_active_8.jpg,,
+7,FED_20170824a_3T2,,A,35,36,36.0031971959979,4,3.99872654100182,Agent,1,passive,Lily Triangle is being bounced by Zach Star.,Zach,Star,Lily,Triangle,Base_passive_35.jpg,Agent_passive_35.jpg,,
+,FED_20170824a_3T2,,A,NA,40,40.0028956629976,2,1.99977690799278,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+8,FED_20170824a_3T2,,A,8,42,42.0034728469909,4,3.99852076001116,Agent,1,passive,Zach Star is being rolled by Kyle Square.,Kyle,Square,Zach,Star,Base_passive_8.jpg,Agent_passive_8.jpg,,
+9,FED_20170824a_3T2,,A,19,46,46.0031719960098,4,3.99719623898272,Agent,1,passive,Kyle Square is being bounced by Lily Triangle.,Lily,Triangle,Kyle,Square,Base_passive_19.jpg,Agent_passive_19.jpg,,
+,FED_20170824a_3T2,,A,NA,50,50.0010338700085,6,6.0018118909793,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+10,FED_20170824a_3T2,,A,41,56,56.0039104940079,10,9.99705438598176,Patient,0,active,Zach Star is shaking Lily Triangle.,Zach,Star,Lily,Triangle,Base_active_41.jpg,Patient_active_41.jpg,,N
+11,FED_20170824a_3T2,,A,4,66,66.001640241011,4,3.99930594398757,Patient,1,passive,Lily Triangle is being bounced by Kyle Square.,Kyle,Square,Lily,Triangle,Base_passive_4.jpg,Patient_passive_4.jpg,,
+,FED_20170824a_3T2,,A,NA,70,70.001651936007,4,4.00183868498425,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+12,FED_20170824a_3T2,,A,19,74,74.0042605880008,4,3.99778002098901,Agent,0,active,Lily Triangle is bouncing Kyle Square.,Lily,Triangle,Kyle,Square,Base_active_19.jpg,Agent_active_19.jpg,,
+,FED_20170824a_3T2,,A,NA,78,78.0026870069851,4,3.99945319301332,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+13,FED_20170824a_3T2,,A,8,82,82.0027977309946,4,3.99766039499082,Patient,1,passive,Zach Star is being rolled by Kyle Square.,Kyle,Square,Zach,Star,Base_passive_8.jpg,Patient_passive_8.jpg,,
+14,FED_20170824a_3T2,,A,34,86,86.0011928380118,4,4.00067880799179,Patient,1,passive,Kyle Square is being bounced by Zach Star.,Zach,Star,Kyle,Square,Base_passive_34.jpg,Patient_passive_34.jpg,,
+15,FED_20170824a_3T2,,A,23,90,90.0025757300027,4,3.99819654499879,Patient,0,active,Lily Triangle is rolling Zach Star.,Lily,Triangle,Zach,Star,Base_active_23.jpg,Patient_active_23.jpg,,
+16,FED_20170824a_3T2,,A,4,94,94.0015571469849,4,3.99978010400082,Agent,1,passive,Lily Triangle is being bounced by Kyle Square.,Kyle,Square,Lily,Triangle,Base_passive_4.jpg,Agent_passive_4.jpg,,
+17,FED_20170824a_3T2,,A,23,98,98.0020041579846,4,3.99844898001174,Agent,1,passive,Zach Star is being rolled by Lily Triangle.,Lily,Triangle,Zach,Star,Base_passive_23.jpg,Agent_passive_23.jpg,,
+,FED_20170824a_3T2,,A,NA,102,102.001196019992,4,4.00060440599918,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+18,FED_20170824a_3T2,,A,38,106,106.002489770006,4,3.99877494899556,Patient,1,passive,Lily Triangle is being rolled by Zach Star.,Zach,Star,Lily,Triangle,Base_passive_38.jpg,Patient_passive_38.jpg,,
+,FED_20170824a_3T2,,A,NA,110,110.00194557599,2,2.00001437700121,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+19,FED_20170824a_3T2,,A,38,112,112.002685254993,4,3.99852388401632,Patient,0,active,Zach Star is rolling Lily Triangle.,Zach,Star,Lily,Triangle,Base_active_38.jpg,Patient_active_38.jpg,,
+20,FED_20170824a_3T2,,A,26,116,116.001837610995,4,3.99986459099455,Agent,0,active,Lily Triangle is shaking Zach Star.,Lily,Triangle,Zach,Star,Base_active_26.jpg,Agent_active_26.jpg,,
+,FED_20170824a_3T2,,A,NA,120,120.00247146099,4,4.00054722299683,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+21,FED_20170824a_3T2,,A,22,124,124.003707107011,4,3.99670946897822,Patient,0,active,Lily Triangle is rolling Kyle Square.,Lily,Triangle,Kyle,Square,Base_active_22.jpg,Patient_active_22.jpg,,
+,FED_20170824a_3T2,,A,NA,128,128.001030971995,2,2.00134052700014,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+22,FED_20170824a_3T2,,A,11,130,130.003027292987,4,3.99841719301185,Patient,1,passive,Zach Star is being shaken by Kyle Square.,Kyle,Square,Zach,Star,Base_passive_11.jpg,Patient_passive_11.jpg,,
+,FED_20170824a_3T2,,A,NA,134,134.002188507002,2,2.00051343100495,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+23,FED_20170824a_3T2,,A,38,136,136.003422009991,4,3.99857429499389,Agent,1,passive,Lily Triangle is being rolled by Zach Star.,Zach,Star,Lily,Triangle,Base_passive_38.jpg,Agent_passive_38.jpg,,
+,FED_20170824a_3T2,,A,NA,140,140.003149638011,2,1.99892876599915,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+24,FED_20170824a_3T2,,A,26,142,142.002695176983,4,3.99894872700679,Patient,0,active,Lily Triangle is shaking Zach Star.,Lily,Triangle,Zach,Star,Base_active_26.jpg,Patient_active_26.jpg,,
+,FED_20170824a_3T2,,A,NA,146,146.002263595001,6,5.99981575299171,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+25,FED_20170824a_3T2,,A,20,152,152.002696148003,10,9.99857423198409,Agent,1,passive,Zach Star is being bounced by Lily Triangle.,Lily,Triangle,Zach,Star,Base_passive_20.jpg,Agent_passive_20.jpg,,N
+,FED_20170824a_3T2,,A,NA,162,162.001899816009,2,2.00123213298502,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+26,FED_20170824a_3T2,,A,20,164,164.003805610992,4,3.99746514201979,Agent,0,active,Lily Triangle is bouncing Zach Star.,Lily,Triangle,Zach,Star,Base_active_20.jpg,Agent_active_20.jpg,,
+27,FED_20170824a_3T2,,A,5,168,168.001883260993,4,3.99876303900965,Agent,1,passive,Zach Star is being bounced by Kyle Square.,Kyle,Square,Zach,Star,Base_passive_5.jpg,Agent_passive_5.jpg,,
+28,FED_20170824a_3T2,,A,20,172,172.001255132986,4,4.00105353002436,Patient,1,passive,Zach Star is being bounced by Lily Triangle.,Lily,Triangle,Zach,Star,Base_passive_20.jpg,Patient_passive_20.jpg,,
+29,FED_20170824a_3T2,,A,38,176,176.003139389009,4,3.99714569197386,Agent,0,active,Zach Star is rolling Lily Triangle.,Zach,Star,Lily,Triangle,Base_active_38.jpg,Agent_active_38.jpg,,
+30,FED_20170824a_3T2,,A,35,180,180.00089873001,4,3.9998973949987,Patient,0,active,Zach Star is bouncing Lily Triangle.,Zach,Star,Lily,Triangle,Base_active_35.jpg,Patient_active_35.jpg,,
+,FED_20170824a_3T2,,A,NA,184,184.001417694992,6,6.00038645800669,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+31,FED_20170824a_3T2,,A,40,190,190.002414927993,4,3.99866032999125,Patient,1,passive,Kyle Square is being shaken by Zach Star.,Zach,Star,Kyle,Square,Base_passive_40.jpg,Patient_passive_40.jpg,,
+,FED_20170824a_3T2,,A,NA,194,194.001690320991,6,6.0005721450143,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+32,FED_20170824a_3T2,,A,23,200,200.002872099984,4,3.99742852602503,Patient,1,passive,Zach Star is being rolled by Lily Triangle.,Lily,Triangle,Zach,Star,Base_passive_23.jpg,Patient_passive_23.jpg,,
+,FED_20170824a_3T2,,A,NA,204,204.000964036008,2,2.0011131039937,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+33,FED_20170824a_3T2,,A,22,206,206.002690385998,10,9.99894508699072,Patient,1,passive,Kyle Square is being rolled by Lily Triangle.,Lily,Triangle,Kyle,Square,Base_passive_22.jpg,Patient_passive_22.jpg,,N
+,FED_20170824a_3T2,,A,NA,216,216.002266775991,2,1.99978930901852,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+34,FED_20170824a_3T2,,A,7,218,218.002671989001,4,3.99880078498973,Patient,0,active,Kyle Square is rolling Lily Triangle.,Kyle,Square,Lily,Triangle,Base_active_7.jpg,Patient_active_7.jpg,,
+,FED_20170824a_3T2,,A,NA,222,222.002087731002,2,2.00068353000097,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+35,FED_20170824a_3T2,,A,19,224,224.003396401007,4,3.99709061699104,Patient,1,passive,Kyle Square is being bounced by Lily Triangle.,Lily,Triangle,Kyle,Square,Base_passive_19.jpg,Patient_passive_19.jpg,,
+36,FED_20170824a_3T2,,A,10,228,228.001136879,4,4.00054323900258,Patient,1,passive,Lily Triangle is being shaken by Kyle Square.,Kyle,Square,Lily,Triangle,Base_passive_10.jpg,Patient_passive_10.jpg,,
+,FED_20170824a_3T2,,A,NA,232,232.002301873988,4,3.99990371600143,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+37,FED_20170824a_3T2,,A,37,236,236.002825055009,4,3.99850785499439,Patient,1,passive,Kyle Square is being rolled by Zach Star.,Zach,Star,Kyle,Square,Base_passive_37.jpg,Patient_passive_37.jpg,,
+,FED_20170824a_3T2,,A,NA,240,240.001992458012,2,1.99979659597739,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+38,FED_20170824a_3T2,,A,41,242,242.002400491008,4,3.99822528599179,Agent,1,passive,Lily Triangle is being shaken by Zach Star.,Zach,Star,Lily,Triangle,Base_passive_41.jpg,Agent_passive_41.jpg,,
+,FED_20170824a_3T2,,A,NA,246,246.001245724008,2,2.00165773998015,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+39,FED_20170824a_3T2,,A,4,248,248.003522788,4,3.99761808098992,Patient,0,active,Kyle Square is bouncing Lily Triangle.,Kyle,Square,Lily,Triangle,Base_active_4.jpg,Patient_active_4.jpg,,
+40,FED_20170824a_3T2,,A,19,252,252.001756424987,4,3.99852208700031,Patient,0,active,Lily Triangle is bouncing Kyle Square.,Lily,Triangle,Kyle,Square,Base_active_19.jpg,Patient_active_19.jpg,,
+41,FED_20170824a_3T2,,A,37,256,256.000897054997,4,4.00040022699977,Agent,0,active,Zach Star is rolling Kyle Square.,Zach,Star,Kyle,Square,Base_active_37.jpg,Agent_active_37.jpg,,
+,FED_20170824a_3T2,,A,NA,260,260.001914438006,4,4.00014111498604,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+42,FED_20170824a_3T2,,A,26,264,264.002714150003,4,3.99863016000018,Patient,1,passive,Zach Star is being shaken by Lily Triangle.,Lily,Triangle,Zach,Star,Base_passive_26.jpg,Patient_passive_26.jpg,,
+,FED_20170824a_3T2,,A,NA,268,268.001971019985,2,2.00058035601978,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+43,FED_20170824a_3T2,,A,7,270,270.003172998986,4,3.99809898200328,Patient,1,passive,Lily Triangle is being rolled by Kyle Square.,Kyle,Square,Lily,Triangle,Base_passive_7.jpg,Patient_passive_7.jpg,,
+,FED_20170824a_3T2,,A,NA,274,274.001897763985,2,2.00028960002237,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+44,FED_20170824a_3T2,,A,10,276,276.002805019001,4,3.99795481699402,Agent,1,passive,Lily Triangle is being shaken by Kyle Square.,Kyle,Square,Lily,Triangle,Base_passive_10.jpg,Agent_passive_10.jpg,,
+45,FED_20170824a_3T2,,A,20,280,280.001386663993,4,3.99933772400254,Patient,0,active,Lily Triangle is bouncing Zach Star.,Lily,Triangle,Zach,Star,Base_active_20.jpg,Patient_active_20.jpg,,
+46,FED_20170824a_3T2,,A,11,284,284.001349052996,4,3.99892629499664,Patient,0,active,Kyle Square is shaking Zach Star.,Kyle,Square,Zach,Star,Base_active_11.jpg,Patient_active_11.jpg,,
+,FED_20170824a_3T2,,A,NA,288,288.000911006995,4,4.00103109501651,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+47,FED_20170824a_3T2,,A,34,292,292.002566982002,4,3.99911417998374,Agent,1,passive,Kyle Square is being bounced by Zach Star.,Zach,Star,Kyle,Square,Base_passive_34.jpg,Agent_passive_34.jpg,,
+48,FED_20170824a_3T2,,A,11,296,296.002306959999,4,3.99796990098548,Agent,0,active,Kyle Square is shaking Zach Star.,Kyle,Square,Zach,Star,Base_active_11.jpg,Agent_active_11.jpg,,
+49,FED_20170824a_3T2,,A,25,300,300.000895309,4,4.0005343130033,Agent,0,active,Lily Triangle is shaking Kyle Square.,Lily,Triangle,Kyle,Square,Base_active_25.jpg,Agent_active_25.jpg,,
+,FED_20170824a_3T2,,A,NA,304,304.002044204011,6,6.00065138499485,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+50,FED_20170824a_3T2,,A,5,310,310.003311498993,4,3.99766382700182,Agent,0,active,Kyle Square is bouncing Zach Star.,Kyle,Square,Zach,Star,Base_active_5.jpg,Agent_active_5.jpg,,
+,FED_20170824a_3T2,,A,NA,314,314.001601183991,2,2.00113143600174,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+51,FED_20170824a_3T2,,A,25,316,316.003346643003,4,4.00005160499131,Patient,0,active,Lily Triangle is shaking Kyle Square.,Lily,Triangle,Kyle,Square,Base_active_25.jpg,Patient_active_25.jpg,,
+52,FED_20170824a_3T2,,A,22,320,320.004548317986,4,3.99704595300136,Agent,1,passive,Kyle Square is being rolled by Lily Triangle.,Lily,Triangle,Kyle,Square,Base_passive_22.jpg,Agent_passive_22.jpg,,
+53,FED_20170824a_3T2,,A,34,324,324.002211209998,4,3.99962361599319,Patient,0,active,Zach Star is bouncing Kyle Square.,Zach,Star,Kyle,Square,Base_active_34.jpg,Patient_active_34.jpg,,
+,FED_20170824a_3T2,,A,NA,328,328.002456018992,8,7.99990918801632,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+54,FED_20170824a_3T2,,A,37,336,336.002979693993,4,3.99851270799991,Patient,0,active,Zach Star is rolling Kyle Square.,Zach,Star,Kyle,Square,Base_active_37.jpg,Patient_active_37.jpg,,
+55,FED_20170824a_3T2,,A,40,340,340.002111643989,10,9.9996313629963,Patient,0,active,Zach Star is shaking Kyle Square.,Zach,Star,Kyle,Square,Base_active_40.jpg,Patient_active_40.jpg,,N
+56,FED_20170824a_3T2,,A,35,350,350.002377555997,4,3.99894536900683,Agent,0,active,Zach Star is bouncing Lily Triangle.,Zach,Star,Lily,Triangle,Base_active_35.jpg,Agent_active_35.jpg,,
+,FED_20170824a_3T2,,A,NA,354,354.001943271986,8,8.0008077090024,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+57,FED_20170824a_3T2,,A,26,362,362.003362043994,4,3.99815271099214,Agent,1,passive,Zach Star is being shaken by Lily Triangle.,Lily,Triangle,Zach,Star,Base_passive_26.jpg,Agent_passive_26.jpg,,
+,FED_20170824a_3T2,,A,NA,366,366.002131471003,2,2.00048783398233,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+58,FED_20170824a_3T2,,A,34,368,368.003233225987,4,3.99795969799743,Agent,0,active,Zach Star is bouncing Kyle Square.,Zach,Star,Kyle,Square,Base_active_34.jpg,Agent_active_34.jpg,,
+59,FED_20170824a_3T2,,A,41,372,372.001813093986,4,3.99897133902414,Agent,0,active,Zach Star is shaking Lily Triangle.,Zach,Star,Lily,Triangle,Base_active_41.jpg,Agent_active_41.jpg,,
+,FED_20170824a_3T2,,A,NA,376,376.001404990995,6,6.00033907001489,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+60,FED_20170824a_3T2,,A,23,382,382.002365307009,4,3.99824279799941,Agent,0,active,Lily Triangle is rolling Zach Star.,Lily,Triangle,Zach,Star,Base_active_23.jpg,Agent_active_23.jpg,,
+61,FED_20170824a_3T2,,A,22,386,386.00122706499,4,4.00063333101571,Agent,0,active,Lily Triangle is rolling Kyle Square.,Lily,Triangle,Kyle,Square,Base_active_22.jpg,Agent_active_22.jpg,,
+62,FED_20170824a_3T2,,A,5,390,390.002482612996,4,3.99821511900518,Patient,1,passive,Zach Star is being bounced by Kyle Square.,Kyle,Square,Zach,Star,Base_passive_5.jpg,Patient_passive_5.jpg,,
+,FED_20170824a_3T2,,A,NA,394,394.001321413001,4,4.00033194199204,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+63,FED_20170824a_3T2,,A,10,398,398.002265193994,10,9.99906667799223,Agent,0,active,Kyle Square is shaking Lily Triangle.,Kyle,Square,Lily,Triangle,Base_active_10.jpg,Agent_active_10.jpg,,N
+,FED_20170824a_3T2,,A,NA,408,408.001961975999,4,4.00070180901093,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+64,FED_20170824a_3T2,,A,35,412,412.003275077004,10,9.99789415198029,Patient,1,passive,Lily Triangle is being bounced by Zach Star.,Zach,Star,Lily,Triangle,Base_passive_35.jpg,Patient_passive_35.jpg,,N
+65,FED_20170824a_3T2,,A,8,422,422.00179850799,4,3.99900255000102,Agent,0,active,Kyle Square is rolling Zach Star.,Kyle,Square,Zach,Star,Base_active_8.jpg,Agent_active_8.jpg,,
+,FED_20170824a_3T2,,A,NA,426,426.001416338986,4,4.0012823640136,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+66,FED_20170824a_3T2,,A,11,430,430.003305046004,4,3.9990656709997,Agent,1,passive,Zach Star is being shaken by Kyle Square.,Kyle,Square,Zach,Star,Base_passive_11.jpg,Agent_passive_11.jpg,,
+,FED_20170824a_3T2,,A,NA,434,434.003450504999,2,1.99873911199393,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+67,FED_20170824a_3T2,,A,7,436,436.002804686985,4,3.99873832802405,Agent,1,passive,Lily Triangle is being rolled by Kyle Square.,Kyle,Square,Lily,Triangle,Base_passive_7.jpg,Agent_passive_7.jpg,,
+68,FED_20170824a_3T2,,A,4,440,440.002166452003,10,9.9983163579891,Agent,0,active,Kyle Square is bouncing Lily Triangle.,Kyle,Square,Lily,Triangle,Base_active_4.jpg,Agent_active_4.jpg,,N
+,FED_20170824a_3T2,,A,NA,450,450.001115232008,2,2.00065643899143,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+69,FED_20170824a_3T2,,A,37,452,452.002382026985,10,9.99891974500497,Agent,1,passive,Kyle Square is being rolled by Zach Star.,Zach,Star,Kyle,Square,Base_passive_37.jpg,Agent_passive_37.jpg,,N
+70,FED_20170824a_3T2,,A,41,462,462.001940265996,4,3.99880922201555,Patient,1,passive,Lily Triangle is being shaken by Zach Star.,Zach,Star,Lily,Triangle,Base_passive_41.jpg,Patient_passive_41.jpg,,
+,FED_20170824a_3T2,,A,NA,466,466.001367950987,2,2.0016629610036,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
+71,FED_20170824a_3T2,,A,5,468,468.003641071002,4,3.99687648800318,Patient,0,active,Kyle Square is bouncing Zach Star.,Kyle,Square,Zach,Star,Base_active_5.jpg,Patient_active_5.jpg,,
+72,FED_20170824a_3T2,,A,10,472,472.001131877012,4,3.99967797499266,Patient,0,active,Kyle Square is shaking Lily Triangle.,Kyle,Square,Lily,Triangle,Base_active_10.jpg,Patient_active_10.jpg,,
+,FED_20170824a_3T2,,A,NA,476,476.001426014991,4,4.00170982099371,Fixation,NA,,NA,NA,NA,NA,NA,,,NA,NA
