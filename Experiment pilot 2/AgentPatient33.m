@@ -279,7 +279,10 @@ function AgentPatient33(subjID, image_type, order)
     item_index = 1;
     %Present each event
     try
-        for eventNum = 1:numEvents
+     for eventNum = 1:numEvents
+            
+            disablekeys = [87,103]; %ignore input from + or = keys (constant input from scanner)
+            DisableKeysForKbCheck(disablekeys);
             
             condition = all_materials.Condition(eventNum);
             intendedOnset = all_materials.IntendedOnset(eventNum);
@@ -322,7 +325,6 @@ function AgentPatient33(subjID, image_type, order)
                     question = 1;
                     theQ = char(all_materials.Question(eventNum)); %XXXXXSTART HERE!
                     theA = char(all_materials.Answer(eventNum));
-                    disp(theA) 
                 end
                 
                 eventEndTime = runOnset + intendedOffset;
@@ -352,15 +354,16 @@ function AgentPatient33(subjID, image_type, order)
                     PTBhelper('stimText', wPtr, strcat(theQ, '\n Press 1 for yes, 2 for no'),fixFontSize);
                     %record input:
                     record_resp = PTBhelper('waitFor',questionTime,kbIdx,escapeKey);
-                    RestrictKeysForKbCheck(['1!','2@']); %only check key press status of these two keys
                     %we just want the key that is pressed:
                     resp = record_resp{1};
                     rt = record_resp{2};
                     feedback_dur = questionTime - rt;
                     if resp == '1!' % record yes if 1 is pressed
                         results.Response{eventNum} = 'Y';
+                        disp(resp)
                     elseif resp == '2@' %record no if 2 is pressed
-                        results.Response{eventNum} = 'N';   
+                        results.Response{eventNum} = 'N';  
+                        disp(resp)
                     end
                 %Was the response correct? 
                     if results.Response{eventNum} == theA
@@ -370,8 +373,8 @@ function AgentPatient33(subjID, image_type, order)
                         results.Correct{eventNum} = 'N';
                          PTBhelper('stimImage', wPtr, 2, feedback_img); %show red x for incorrect
                     end
-                     RestrictKeysForKbCheck([]); %reenable all keys 
                 end
+                
                               
                 %Save Sentence, agent info to results
                 results.Sentence{eventNum} = sentence;
