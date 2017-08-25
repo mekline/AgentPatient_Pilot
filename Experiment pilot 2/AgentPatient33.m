@@ -282,7 +282,7 @@ function AgentPatient33(subjID, image_type, order)
      for eventNum = 1:numEvents
             
             disablekeys = [87,103]; %ignore input from + or = keys (constant input from scanner)
-            DisableKeysForKbCheck(disablekeys);
+            olddisabledkeys = DisableKeysForKbCheck(disablekeys);            
             
             condition = all_materials.Condition(eventNum);
             intendedOnset = all_materials.IntendedOnset(eventNum);
@@ -409,6 +409,9 @@ function AgentPatient33(subjID, image_type, order)
         for k=1:length(errorInfo.stack)
             disp(errorInfo.stack(k))
         end
+        
+        olddisabledkeys = DisableKeysForKbCheck(olddisabledkeys); %reset keys
+
     end
     
     %Save all data
