@@ -49,12 +49,11 @@ ss=struct(...
     'ExplicitMasking',[],...
     'ask','missing');    % can be 'none' (any missing information is assumed to take default values), 'missing' (any missing information will be asked to the user), 'all' (it will ask for confirmation on each parameter)
 
-
-addpath('/software/spm8');
+addpath('/software/spm12');
 addpath('/users/evelina9/fMRI_PROJECTS/spm_ss_vE/');
-
-
 addpath('/mindhive/evlab/u/bpritche/Documents/fMRI_analyses/Toolbox/spm_ss_Apr4-2016'); %set spm_ss version here!
+
+addpath /software/spm_ss/
 
 ss=spm_ss_design(ss);    % see help spm_ss_design for additional information
 ss=spm_ss_estimate(ss);  % can be found in /software/spm_ss
