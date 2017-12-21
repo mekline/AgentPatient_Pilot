@@ -7,9 +7,9 @@
 
 ####
 #Stuff to change!
-myResultsFolder = paste(getwd(),'/MDloc_resp_agpat_20170317',sep='')
+myResultsFolder = paste(getwd(),'/loc_langloc_crit_langloc_20171218',sep='')
 myOutputFolder = getwd()
-myFilename = 'MDloc_resp_agpat_20170317.csv'
+myFilename = 'loc_langloc_crit_langloc_20171218.csv'
 toSave = 1
 
 
@@ -23,7 +23,7 @@ library(stringr)
 setwd(myResultsFolder)
 
 #Open the weirdly formatted files and get just the table we want. 
-myfile  = read.csv('spm_ss_mROI_data.csv',sep=',', skip=1)
+myfile  = read.csv('spm_ss_mROI_data.csv',sep=',', skip=1, header=FALSE)
 lastsub = ncol(myfile) 
 myfile= myfile[complete.cases(myfile[,lastsub]),]#drop things past the individual % changes....
 
