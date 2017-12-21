@@ -1,15 +1,13 @@
 addpath /software/gablab/conn
 addpath /users/evelina9/fMRI_PROJECTS/spm_ss_vE
-addpath /software/spm12
+%addpath /software/spm12
 addpath /software/spm_ss
 
-addpath('/software/spm12');
+%addpath('/software/spm12');
 addpath('/users/evelina9/fMRI_PROJECTS/spm_ss_vE/');
 addpath('/mindhive/evlab/u/bpritche/Documents/fMRI_analyses/Toolbox/spm_ss_Apr4-2016'); %set spm_ss version here!
 
-addpath /software/spm_ss/
-
-addpath(genpath('/software/pkg/matlab/matlab-2015b/toolbox/stats/'))
+%addpath(genpath('/software/pkg/matlab/matlab-2015b/toolbox/stats/'))
 
 % defines data sources
 experiments(1)=struct(...
@@ -196,11 +194,11 @@ acc_all(:,find(~validsubjects))=nan;
 fh=fopen(filenameout,'wt');
 
 acc_n=sum(~isnan(acc_pairwise),4);
-acc_mean=mean(acc_pairwise,4, 'omitnan');
-acc_stderr=std(acc_pairwise,0,4, 'omitnan')./sqrt(acc_n);
+acc_mean=nanmean(acc_pairwise,4);
+acc_stderr=nanstd(acc_pairwise,0,4)./sqrt(acc_n);
 chance_level=.5;
 acc_T=(acc_mean-chance_level)./acc_stderr;
-acc_p=1-tcdf(acc_T,acc_n-1);
+%acc_p=1-tcdf(acc_T,acc_n-1);
 fprintf(fh,'%s\n',['Accuracy of pairwise identification:    mean(standard error) p-value (chance level ',num2str(chance_level*100),'%)']);
 fprintf(fh,'%s','ROI,# of voxels,# of valid subjects');
 for n1=1:numel(condition_names),for n2=[1:n1-1,n1+1:numel(condition_names)],fprintf(fh,'%s',[',',condition_names{n1},' > ',condition_names{n2}]);end;end
@@ -209,17 +207,17 @@ for nroi=1:size(acc_mean,3),
     fprintf(fh,'%s',[roinames{nroi},',']);
     fprintf(fh,'%s',[num2str(mean(mean(N(:,:,nroi),2),1),'%0.0f'),' (',num2str(std(mean(N(:,:,nroi),2),0,1)/sqrt(size(N,1)),'%0.0f'),'),']);
     fprintf(fh,'%s',[num2str(mean(mean(acc_n(:,:,nroi))),'%0.0f')]);
-    for n1=1:size(acc_mean,1),for n2=[1:n1-1,n1+1:size(acc_mean,2)],fprintf(fh,'%s',[',',num2str(100*acc_mean(n1,n2,nroi),'%0.0f'),'(',num2str(100*acc_stderr(n1,n2,nroi),'%0.1f'),') p=',num2str(acc_p(n1,n2,nroi),'%0.3f')]);end;end
+    for n1=1:size(acc_mean,1),for n2=[1:n1-1,n1+1:size(acc_mean,2)],fprintf(fh,'%s',[',',num2str(100*acc_mean(n1,n2,nroi),'%0.0f'),'(',num2str(100*acc_stderr(n1,n2,nroi),'%0.1f'),') p=','could not calc acc_p','%0.3f']);end;end
     fprintf(fh,'\n');
 end
 fprintf(fh,'\n');
 
 acc_n=sum(~isnan(acc_total),3);
-acc_mean=mean(acc_total,3, 'omitnan');
-acc_stderr=std(acc_total,0,3,'omitnan')./sqrt(acc_n);
+acc_mean=nanmean(acc_total,3);
+acc_stderr=nanstd(acc_total,0,3)./sqrt(acc_n);
 chance_level=.5;
 acc_T=(acc_mean-chance_level)./acc_stderr;
-acc_p=1-tcdf(acc_T,acc_n-1);
+%acc_p=1-tcdf(acc_T,acc_n-1);
 fprintf(fh,'%s\n',['Accuracy of identification (average):    mean(standard error) p-value (chance level ',num2str(chance_level*100),'%)']);
 fprintf(fh,'%s','ROI,# of voxels,# of valid subjects');
 for n1=1:numel(condition_names),fprintf(fh,'%s',[',',condition_names{n1}, ' > * (average)']);end
@@ -228,17 +226,17 @@ for nroi=1:size(acc_mean,2),
     fprintf(fh,'%s',[roinames{nroi},',']);
     fprintf(fh,'%s',[num2str(mean(mean(N(:,:,nroi),2),1),'%0.0f'),' (',num2str(std(mean(N(:,:,nroi),2),0,1)/sqrt(size(N,1)),'%0.0f'),'),']);
     fprintf(fh,'%s',[num2str(mean(acc_n(:,nroi)),'%0.0f')]);
-    for n1=1:size(acc_mean,1),fprintf(fh,'%s',[',',num2str(100*acc_mean(n1,nroi),'%0.0f'),'(',num2str(100*acc_stderr(n1,nroi),'%0.1f'),') p=',num2str(acc_p(n1,nroi),'%0.3f')]);end
+    for n1=1:size(acc_mean,1),fprintf(fh,'%s',[',',num2str(100*acc_mean(n1,nroi),'%0.0f'),'(',num2str(100*acc_stderr(n1,nroi),'%0.1f'),') p=','cannot calc acc_p','%0.3f']);end
     fprintf(fh,'\n');
 end
 fprintf(fh,'\n');
 
 acc_n=sum(~isnan(acc_all),3);
-acc_mean=mean(acc_all,3,'omitnan');
-acc_stderr=std(acc_all,0,3, 'omitnan')./sqrt(acc_n);
+acc_mean=nanmean(acc_all,3);
+acc_stderr=nanstd(acc_all,0,3)./sqrt(acc_n);
 chance_level=1/size(Z,2);
 acc_T=(acc_mean-chance_level)./acc_stderr;
-acc_p=1-tcdf(acc_T,acc_n-1);
+%acc_p=1-tcdf(acc_T,acc_n-1);
 fprintf(fh,'%s\n',['Accuracy of identification (across all conditions):    mean(standard error) p-value (chance level ',num2str(chance_level*100),'%)']);
 fprintf(fh,'%s','ROI,# of voxels,# of valid subjects');
 for n1=1:numel(condition_names),fprintf(fh,'%s',[',',condition_names{n1},' > * (all)']);end
@@ -247,7 +245,7 @@ for nroi=1:size(acc_mean,2),
     fprintf(fh,'%s',[roinames{nroi},',']);
     fprintf(fh,'%s',[num2str(mean(mean(N(:,:,nroi),2),1),'%0.0f'),' (',num2str(std(mean(N(:,:,nroi),2),0,1)/sqrt(size(N,1)),'%0.0f'),'),']);
     fprintf(fh,'%s',[num2str(mean(acc_n(:,nroi)),'%0.0f')]);
-    for n1=1:size(acc_mean,1),fprintf(fh,'%s',[',',num2str(100*acc_mean(n1,nroi),'%0.0f'),'(',num2str(100*acc_stderr(n1,nroi),'%0.1f'),') p=',num2str(acc_p(n1,nroi),'%0.3f')]);end
+    for n1=1:size(acc_mean,1),fprintf(fh,'%s',[',',num2str(100*acc_mean(n1,nroi),'%0.0f'),'(',num2str(100*acc_stderr(n1,nroi),'%0.1f'),') p=','could not calc acc_p','%0.3f']);end
     fprintf(fh,'\n');
 end
 fprintf(fh,'\n');
@@ -266,8 +264,8 @@ for nroi=1:size(Zmean,3),
         for nsub=1:size(Zmean,4),
             fprintf(fh,',%f',t0(nsub));
         end
-        t1=mean(t0, 'omitnan');
-        t2=std(t0, 'omitnan');
+        t1=nanmean(t0);
+        t2=nanstd(t0);
         t3=sum(~isnan(t0));
         fprintf(fh,',,%f,%f\n',t1,t2./sqrt(t3));
     end
@@ -279,8 +277,8 @@ for nroi=1:size(Zmean,3),
             for nsub=1:size(Zmean,4),
                 fprintf(fh,',%f',t0(nsub));
             end
-            t1=mean(t0, 'omitnan');
-            t2=std(t0, 'omitnan');
+            t1=nanmean(t0);
+            t2=nanstd(t0);
             t3=sum(~isnan(t0));
             fprintf(fh,',,%f,%f\n',t1,t2./sqrt(t3));
         end
@@ -300,8 +298,8 @@ for nroi=1:size(Zmean,3),
         for nsub=1:size(Zmean,4),
             fprintf(fh,',%f',t0(nsub));
         end
-        t1=mean(t0,'omitnan');
-        t2=std(t0,'omitnan');
+        t1=nanmean(t0);
+        t2=nanstd(t0);
         t3=sum(~isnan(t0));
         t4=1-spm_Tcdf(t1./t2.*sqrt(t3),t3-1);
         fprintf(fh,',,%f,%f,%f,%d,%f\n',t1,t2./sqrt(t3),t1./t2.*sqrt(t3),t3-1,t4);
@@ -314,8 +312,8 @@ for nroi=1:size(Zmean,3),
             for nsub=1:size(Zmean,4),
                 fprintf(fh,',%f',t0(nsub));
             end
-            t1=mean(t0,'omitnan');
-            t2=std(t0,'omitnan');
+            t1=nanmean(t0);
+            t2=nanstd(t0);
             t3=sum(~isnan(t0));
             t4=1-spm_Tcdf(t1./t2.*sqrt(t3),t3-1);
             fprintf(fh,',,%f,%f,%f,%d,%f\n',t1,t2./sqrt(t3),t1./t2.*sqrt(t3),t3-1,t4);
@@ -329,12 +327,12 @@ for nroi=1:size(Zmean,3),
             for nsub=1:size(Zmean,4),
                 fprintf(fh,',[%f;%f]',t0(nsub,1),t0(nsub,2));
             end
-            t1=mean(t0,'omitnan');
-            t2=std(t0,'omitnan');
+            t1=nanmean(t0);
+            t2=nanstd(t0);
             t3=sum(~isnan(t0),1);
             t0(any(isnan(t0),2),:)=[];
-            [h,f,p,dof]=glm(ones(size(t0,1),1),t0);
-            fprintf(fh,',,[%f;%f],[%f;%f],%f,(%d;%d),%f\n',t1(1),t1(2),t2(1)./sqrt(t3(1)),t2(2)./sqrt(t3(2)),f,dof(1),dof(2),p);
+            %[h,f,p,dof]=glm(ones(size(t0,1),1),t0);
+            %fprintf(fh,',,[%f;%f],[%f;%f],%f,(%d;%d),%f\n',t1(1),t1(2),t2(1)./sqrt(t3(1)),t2(2)./sqrt(t3(2)),f,dof(1),dof(2),p);
         end
     end
 end
@@ -348,8 +346,8 @@ disp(['Results stored in ',filenameout,'.']);
 disp('displaying plots');
 
 Z_n=sum(~isnan(mean(Z,5)),4);
-Z_mean=mean(mean(Z,5),4, 'omitnan');
-Z_stderr=std(mean(Z,5),0,4, 'omitnan')./sqrt(Z_n); 
+Z_mean=nanmean(mean(Z,5),4);
+Z_stderr=nanstd(mean(Z,5),0,4)./sqrt(Z_n); 
 nrois=1:size(Z_mean,3);
 
 figure('color','w');
