@@ -1,25 +1,22 @@
 %AgentPatientStimuli.m
 % 
 % DESCRIPTION
-% Subjects view stimuli - either pictures or sentences ? about one shape
+% Subjects view stimuli - either pictures or sentences - about one shape
 % performing an action on another (e.g., 'Melissa Oval is being bounced by
 % Kyle Square'). Sometimes the agent is highlighted; other times the
 % patient is highlighted.
 % 
-% Run PsychStartup; in command line, then call the function
+% Function call: AgentPatient33(subjID, image_type, order)
 % 
-% Function call: AgentPatient33(subjID, image_type, order, run)
-% 
-% RUNTIME: should be 480 sec (8 min, 240 TRs) ##TOUPDATE
-%          -runs 10 times faster with subjID 'debug'
-%          -actually takes about 1475 sec due to lag
+% RUNTIME: 480 sec (8 min, 240 TRs)
+%   -runs 10 times faster with subjID 'debug'
 % 
 % INPUTS:
 %   -subjID: subject ID string
 %   -image_type: 'sentences' for sentence stimuli, 'stills' for picture
 %   stimuli
 %   -order: A, B, C D, or E; determines which preset item ordering to use
-%   -(Each participant should get at least XXX runs, each with a different
+%   -(Each participant should ideally get all 5 runs, each with a different
 %   ordering)
 % 
 % OUTPUT:
@@ -30,9 +27,12 @@
 % To change font size, go to Set display options.
 % If the aspect ratio is off, change SCREEN_ADJUST in Set experiment
 % constants until it looks better.
+
 function AgentPatient33(subjID, image_type, order)
-Screen('Preference', 'SkipSyncTests', 1)
-start_time = GetSecs;
+
+    PsychStartup;
+    Screen('Preference', 'SkipSyncTests', 1)
+    start_time = GetSecs;
     
 
     %% Make sure inputs are valid and raise an error otherwise
@@ -65,10 +65,10 @@ start_time = GetSecs;
     %% Set experiment constants
     %Timing (in seconds)              
     FIX_DUR     = 0.0; %Length of trial-initial fixation
-    ITI         = 0.2; %Inter-trial interval
+    ITI         = 0.2; %Inter-trial interval (display fixation cross)
     BLINK_DUR   = 0.1; %Length of one blink on or off
-    TIME_TO_Q   = 4.0; %delay until question, for question trials
-    TIME_Q      = 2.0; %time question visible, for question trials
+    TIME_TO_Q   = 2.0; %delay until question, for question trials
+    TIME_Q      = 4.0; %time question visible, for question trials
     SCREEN_ADJUST = 1.2; %factor to adjust aspect ratio by
     
     %Based on image type (sentences or stills), decide what Flip means
@@ -153,6 +153,7 @@ start_time = GetSecs;
     end
 
 	%% Set up screen and keyboard for Psychtoolbox
+    
     %Screen
     screenNum = max(Screen('Screens'));  %Highest screen number is most likely correct display
     windowInfo = PTBhelper('initialize',screenNum);
@@ -162,7 +163,17 @@ start_time = GetSecs;
         winHeight = rect(4)*SCREEN_ADJUST;
     oldEnableFlag = windowInfo{4};
     HideCursor;
-    PTBhelper('stimImage',wPtr,'WHITE');
+    PTBhelper('stimImage', wPtr, 'WHITE');
+    %Welcome Screen Setup
+    WELCOME_DIR = fullfile(pwd, 'images', 'Welcome_Screen');
+        welcome_img = cell(1,1);
+        welcome_name = 'Welcome_Screen.001.jpg';
+        welcome_files{1,1} = fullfile(WELCOME_DIR, welcome_name);
+        welcome = welcome_files{1};
+        welcome = imread(welcome, 'jpg');
+        fclose('all');
+        welcome_img{1} = Screen('MakeTexture', wPtr, double(welcome)); 
+            
     PTBhelper('stimText',wPtr,'Loading images\n\n(Don''t start yet!)',30);
      
     %Keyboard
@@ -170,6 +181,8 @@ start_time = GetSecs;
     keyboardInfo = PTBhelper('getKeyboardIndex');
     kbIdx = [keyboardInfo{1}];
     escapeKey = keyboardInfo{2};
+    
+    %Display Welcome Screen
     
     %% Set up cells containing image file data
     %Initialize the cells and IMAGE_DIR
@@ -183,6 +196,7 @@ start_time = GetSecs;
     base_stims = cell(1,72);
     
     IMAGE_DIR = fullfile(pwd, 'images', image_type); %the folder we're taking images from
+
     
     % SET UP FEEDBACK IMAGES
     feedback_count = 2; %number of feedback images
@@ -245,15 +259,17 @@ start_time = GetSecs;
         results.FlipMeaning{eventNum} = char(flip_word);
         results.Trial{eventNum} = index;
         index = index+1; %increment counter, needed to keep images in the right spot on the image list
+         
+        %Display progress of loading
+        loadstring = strcat('Loading\n\n', num2str(index), '/120');
+        DrawFormattedText(wPtr, loadstring);
+        PTBhelper('stimImage', wPtr, 1, welcome_img); %display intro image
         
-        PTBhelper('stimText',wPtr,['Loading images\n\n(Don''t start yet!)\n' num2str(index) '/120'],30);
- 
         end
     end 
+    
     load_end_time = GetSecs;
-    load_time = load_end_time - load_start_time
-  
-
+    load_time = load_end_time - load_start_time;
     
     %% Present the experiment
 	% Wait indefinitely until trigger
@@ -263,7 +279,10 @@ start_time = GetSecs;
     item_index = 1;
     %Present each event
     try
-        for eventNum = 1:numEvents
+     for eventNum = 1:numEvents
+            
+            disablekeys = [87,103]; %ignore input from + or = keys (constant input from scanner)
+            olddisabledkeys = DisableKeysForKbCheck(disablekeys);            
             
             condition = all_materials.Condition(eventNum);
             intendedOnset = all_materials.IntendedOnset(eventNum);
@@ -306,7 +325,6 @@ start_time = GetSecs;
                     question = 1;
                     theQ = char(all_materials.Question(eventNum)); %XXXXXSTART HERE!
                     theA = char(all_materials.Answer(eventNum));
-                    disp(theA) 
                 end
                 
                 eventEndTime = runOnset + intendedOffset;
@@ -333,7 +351,7 @@ start_time = GetSecs;
                 %Play a question if applicable!
                 if question
                     PTBhelper('stimText', wPtr, '+', fixFontSize);
-                    PTBhelper('stimText', wPtr, theQ,fixFontSize);
+                    PTBhelper('stimText', wPtr, strcat(theQ, '\n Press 1 for yes, 2 for no'),fixFontSize);
                     %record input:
                     record_resp = PTBhelper('waitFor',questionTime,kbIdx,escapeKey);
                     %we just want the key that is pressed:
@@ -342,8 +360,10 @@ start_time = GetSecs;
                     feedback_dur = questionTime - rt;
                     if resp == '1!' % record yes if 1 is pressed
                         results.Response{eventNum} = 'Y';
+                        disp(resp)
                     elseif resp == '2@' %record no if 2 is pressed
-                        results.Response{eventNum} = 'N';   
+                        results.Response{eventNum} = 'N';  
+                        disp(resp)
                     end
                 %Was the response correct? 
                     if results.Response{eventNum} == theA
@@ -354,6 +374,7 @@ start_time = GetSecs;
                          PTBhelper('stimImage', wPtr, 2, feedback_img); %show red x for incorrect
                     end
                 end
+                
                               
                 %Save Sentence, agent info to results
                 results.Sentence{eventNum} = sentence;
@@ -388,6 +409,9 @@ start_time = GetSecs;
         for k=1:length(errorInfo.stack)
             disp(errorInfo.stack(k))
         end
+        
+        olddisabledkeys = DisableKeysForKbCheck(olddisabledkeys); %reset keys
+
     end
     
     %Save all data
@@ -415,7 +439,7 @@ function [wPtr, rect] = openDebugWindow(screenNum, rect)
     java; %clear java cache
     KbName('UnifyKeyNames');
     warning('off','MATLAB:dispatcher:InexactMatch');
-    AssertOpenGL;
+    AssertOpenGL;  
     suppress_warnings = 1;
     Screen('Preference', 'SuppressAllWarnings', suppress_warnings);
     Screen('Preference', 'TextRenderer', 0);
