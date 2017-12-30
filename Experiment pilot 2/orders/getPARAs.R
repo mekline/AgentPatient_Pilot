@@ -11,7 +11,7 @@ for(f in order.files) {
   tmp <- tmp[tmp$Cond.no != 0,]
   tmp <- tmp[, c('TR.onset', 'Cond.no')]
   fname <- paste(str_split(f,boundary('word'))[[1]][1], '.PARA', sep="")
-  cat("#outputs\n\n", file=fname)
+  cat("#onsets\n\n", file=fname)
   write.table(tmp, fname, sep=" ", row.names = FALSE, col.names = FALSE, append=TRUE)
   cat("\n#names\nagt pat\n\n#durations\n2 2", file=fname, append=TRUE)
 }
