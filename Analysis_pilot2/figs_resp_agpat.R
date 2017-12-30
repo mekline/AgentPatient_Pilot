@@ -16,14 +16,14 @@ library(stringr)
 ########
 #Here, we read in all those files, calculate a whole passle of mean and standard error bars, and then make graphs
 
-myResults = read.csv('loc_langloc_crit_agpat_20171218.csv', 
+myResults = read.csv('loc_langloc_crit_agpat_20171230_no_430.csv', 
                      colClasses = c("factor","factor", "factor","numeric","numeric")) %>%
   mutate(Localizer = 'langlocSN') %>%
   mutate(ROISystem = 'LHLang') %>%
   mutate(TaskCrit = 'AgPat')
 
 
-allSigChange = read.csv('loc_langloc_crit_langloc_20171218.csv', 
+allSigChange = read.csv('loc_langloc_crit_langloc_20171230_no_430.csv', 
                         colClasses = c("factor","factor", "factor","numeric","numeric")) %>%
   mutate(Localizer = 'langlocSN') %>%
   mutate(ROISystem = 'LHLang') %>%
@@ -149,8 +149,8 @@ makeBar = function(plotData, fileName = 'TEST NAME', ylow=-0.5,yhigh=2.5, mycolo
   
 }
 
-makeBar(LangLoc_LangCrit, 'LangLoc_LangCrit')
-makeBar(LangLoc_APCrit, 'LangLoc_APCrit')
+makeBar(LangLoc_LangCrit, 'LangLoc_LangCrit_no_430')
+makeBar(LangLoc_APCrit, 'LangLoc_APCrit_no_430')
 
 #Old contrast lists
 
