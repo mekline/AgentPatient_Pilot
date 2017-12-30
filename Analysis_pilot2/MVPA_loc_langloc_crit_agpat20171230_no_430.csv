@@ -1,0 +1,81 @@
+Accuracy of pairwise identification:    mean(standard error) p-value (chance level 50%)
+ROI,# of voxels,# of valid subjects,agt > pat,pat > agt
+ROI#6,643 (0),2,50(0.0) p=could not calc acc_p%0.3f,50(0.0) p=could not calc acc_p%0.3f
+ROI#4,1611 (0),2,75(25.0) p=could not calc acc_p%0.3f,25(25.0) p=could not calc acc_p%0.3f
+ROI#5,2946 (0),2,50(0.0) p=could not calc acc_p%0.3f,25(25.0) p=could not calc acc_p%0.3f
+ROI#2,731 (0),2,50(0.0) p=could not calc acc_p%0.3f,25(25.0) p=could not calc acc_p%0.3f
+ROI#1,370 (0),2,75(25.0) p=could not calc acc_p%0.3f,25(25.0) p=could not calc acc_p%0.3f
+ROI#3,453 (0),2,50(50.0) p=could not calc acc_p%0.3f,25(25.0) p=could not calc acc_p%0.3f
+
+Accuracy of identification (average):    mean(standard error) p-value (chance level 50%)
+ROI,# of voxels,# of valid subjects,agt > * (average),pat > * (average)
+ROI#6,643 (0),2,50(0.0) p=cannot calc acc_p%0.3f,50(0.0) p=cannot calc acc_p%0.3f
+ROI#4,1611 (0),2,75(25.0) p=cannot calc acc_p%0.3f,25(25.0) p=cannot calc acc_p%0.3f
+ROI#5,2946 (0),2,50(0.0) p=cannot calc acc_p%0.3f,25(25.0) p=cannot calc acc_p%0.3f
+ROI#2,731 (0),2,50(0.0) p=cannot calc acc_p%0.3f,25(25.0) p=cannot calc acc_p%0.3f
+ROI#1,370 (0),2,75(25.0) p=cannot calc acc_p%0.3f,25(25.0) p=cannot calc acc_p%0.3f
+ROI#3,453 (0),2,50(50.0) p=cannot calc acc_p%0.3f,25(25.0) p=cannot calc acc_p%0.3f
+
+Accuracy of identification (across all conditions):    mean(standard error) p-value (chance level 50%)
+ROI,# of voxels,# of valid subjects,agt > * (all),pat > * (all)
+ROI#6,643 (0),2,50(0.0) p=could not calc acc_p%0.3f,50(0.0) p=could not calc acc_p%0.3f
+ROI#4,1611 (0),2,75(25.0) p=could not calc acc_p%0.3f,25(25.0) p=could not calc acc_p%0.3f
+ROI#5,2946 (0),2,50(0.0) p=could not calc acc_p%0.3f,25(25.0) p=could not calc acc_p%0.3f
+ROI#2,731 (0),2,50(0.0) p=could not calc acc_p%0.3f,25(25.0) p=could not calc acc_p%0.3f
+ROI#1,370 (0),2,75(25.0) p=could not calc acc_p%0.3f,25(25.0) p=could not calc acc_p%0.3f
+ROI#3,453 (0),2,50(50.0) p=could not calc acc_p%0.3f,25(25.0) p=could not calc acc_p%0.3f
+
+Within- and Between- condition measures
+ROI,Measure,Subject#1,Subject#2,,Average,Standard error
+ROI#6,Within_agt,0.755210,0.213329,,0.484270,0.270940
+ROI#6,Within_pat,0.532908,-0.492618,,0.020145,0.512763
+ROI#6,Between_agt_pat,0.655682,-0.006893,,0.324394,0.331287
+ROI#6,Between_pat_agt,0.655682,-0.006893,,0.324394,0.331287
+ROI#4,Within_agt,0.453217,0.241663,,0.347440,0.105777
+ROI#4,Within_pat,0.322468,-0.113760,,0.104354,0.218114
+ROI#4,Between_agt_pat,0.361899,0.082881,,0.222390,0.139509
+ROI#4,Between_pat_agt,0.361899,0.082881,,0.222390,0.139509
+ROI#5,Within_agt,1.259380,0.101993,,0.680686,0.578694
+ROI#5,Within_pat,1.198694,-0.265879,,0.466408,0.732287
+ROI#5,Between_agt_pat,1.181070,0.100642,,0.640856,0.540214
+ROI#5,Between_pat_agt,1.181070,0.100642,,0.640856,0.540214
+ROI#2,Within_agt,0.918639,0.287672,,0.603155,0.315484
+ROI#2,Within_pat,1.020692,-0.030934,,0.494879,0.525813
+ROI#2,Between_agt_pat,1.021742,0.305027,,0.663384,0.358357
+ROI#2,Between_pat_agt,1.021742,0.305027,,0.663384,0.358357
+ROI#1,Within_agt,0.694231,0.364530,,0.529380,0.164851
+ROI#1,Within_pat,0.772754,-0.732327,,0.020214,0.752541
+ROI#1,Between_agt_pat,0.760322,-0.141576,,0.309373,0.450949
+ROI#1,Between_pat_agt,0.760322,-0.141576,,0.309373,0.450949
+ROI#3,Within_agt,0.743706,0.195057,,0.469382,0.274324
+ROI#3,Within_pat,0.870568,-0.223471,,0.323548,0.547019
+ROI#3,Between_agt_pat,0.835693,-0.104205,,0.365744,0.469949
+ROI#3,Between_pat_agt,0.835693,-0.104205,,0.365744,0.469949
+
+Within- vs. Between- condition comparisons
+ROI,Measure,Subject#1,Subject#2,,Average,Standard error,T/F,dof,p
+ROI#6,Within_agt>0,0.755210,0.213329,,0.484270,0.270940,1.787366,1,0.162368
+ROI#6,Within_pat>0,0.532908,-0.492618,,0.020145,0.512763,0.039287,1,0.487501
+ROI#6,Within_agt>Between_agt_pat,0.099528,0.220222,,0.159875,0.060347,2.649273,1,0.114887
+ROI#6,Within_pat>Between_pat_agt,-0.122774,-0.485725,,-0.304250,0.181476,-1.676530,1,0.828807
+ROI#6,agt~=pat,[0.099528;-0.122774],[0.220222;-0.485725]ROI#4,Within_agt>0,0.453217,0.241663,,0.347440,0.105777,3.284647,1,0.094071
+ROI#4,Within_pat>0,0.322468,-0.113760,,0.104354,0.218114,0.478440,1,0.357954
+ROI#4,Within_agt>Between_agt_pat,0.091317,0.158781,,0.125049,0.033732,3.707145,1,0.083868
+ROI#4,Within_pat>Between_pat_agt,-0.039431,-0.196641,,-0.118036,0.078605,-1.501633,1,0.812993
+ROI#4,agt~=pat,[0.091317;-0.039431],[0.158781;-0.196641]ROI#5,Within_agt>0,1.259380,0.101993,,0.680686,0.578694,1.176247,1,0.224277
+ROI#5,Within_pat>0,1.198694,-0.265879,,0.466408,0.732287,0.636920,1,0.319478
+ROI#5,Within_agt>Between_agt_pat,0.078310,0.001351,,0.039830,0.038480,1.035096,1,0.244511
+ROI#5,Within_pat>Between_pat_agt,0.017625,-0.366521,,-0.174448,0.192073,-0.908238,1,0.734705
+ROI#5,agt~=pat,[0.078310;0.017625],[0.001351;-0.366521]ROI#2,Within_agt>0,0.918639,0.287672,,0.603155,0.315484,1.911843,1,0.153400
+ROI#2,Within_pat>0,1.020692,-0.030934,,0.494879,0.525813,0.941169,1,0.259644
+ROI#2,Within_agt>Between_agt_pat,-0.103103,-0.017355,,-0.060229,0.042874,-1.404792,1,0.803083
+ROI#2,Within_pat>Between_pat_agt,-0.001049,-0.335961,,-0.168505,0.167456,-1.006265,1,0.750994
+ROI#2,agt~=pat,[-0.103103;-0.001049],[-0.017355;-0.335961]ROI#1,Within_agt>0,0.694231,0.364530,,0.529380,0.164851,3.211274,1,0.096093
+ROI#1,Within_pat>0,0.772754,-0.732327,,0.020214,0.752541,0.026860,1,0.491452
+ROI#1,Within_agt>Between_agt_pat,-0.066092,0.506106,,0.220007,0.286099,0.768990,1,0.291334
+ROI#1,Within_pat>Between_pat_agt,0.012432,-0.590751,,-0.289160,0.301591,-0.958779,1,0.743302
+ROI#1,agt~=pat,[-0.066092;0.012432],[0.506106;-0.590751]ROI#3,Within_agt>0,0.743706,0.195057,,0.469382,0.274324,1.711046,1,0.168354
+ROI#3,Within_pat>0,0.870568,-0.223471,,0.323548,0.547019,0.591475,1,0.329982
+ROI#3,Within_agt>Between_agt_pat,-0.091987,0.299263,,0.103638,0.195625,0.529779,1,0.344924
+ROI#3,Within_pat>Between_pat_agt,0.034875,-0.119265,,-0.042195,0.077070,-0.547491,1,0.659446
+ROI#3,agt~=pat,[-0.091987;0.034875],[0.299263;-0.119265]
